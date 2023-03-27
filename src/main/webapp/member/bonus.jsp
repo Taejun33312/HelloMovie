@@ -39,11 +39,9 @@
 <link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 </head>
-<body class="home-template">
+<body class="home-template" style="height: 900px">
 	<header>
 <jsp:include page="/inc/top.jsp"/>
-				<span></span><span></span><span></span>
-	<a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 	</header>
 	<!-- Form -->
 <table class="question">
@@ -52,24 +50,24 @@
     <%-- 	<%MemberDTO dto = (MemberDTO)request.getAttribute("dto"); dto.getRCount();%> --%>
 		
 		<c:if test="${not empty dto.mem_id}">
-    	<h3>${dto.mem_id} 님의 등급은 ${dto.mem_grade }입니다.</h3>
+    	<h3 style="text-align: center;">${dto.mem_id} 님의 등급은 ${dto.mem_grade }입니다.</h3>
     	</c:if>
 
     </caption>	
         <tr>
-            <th class="th" scope="row"><img alt="BRONZE" src="./img/bornze.jpg" width="250px"></th>
+            <th class="th" scope="row"><img alt="BRONZE" src="./img/bornze.jpg" width="250px" height="180px"></th>
             <td><h3> Bronze</h3>
             <h3>가입시 최초등급 </h3>
             </td>
         </tr>
         <tr>
-            <th class="th" scope="row"><img alt="SILVER" src="./img/silver.jpg" width="250px"></th>
+            <th class="th" scope="row"><img alt="SILVER" src="./img/silver.jpg" width="250px" height="180px"></th>
             <td><h3> 실버</h3>
             <h5> 예매 횟수 10번 이상일시 10% 할인 </h5>
             </td>
         </tr>
         <tr>
-            <th class="th" scope="row"><img alt="GOLD" src="./img/gold.jpg" width="250px"></th>
+            <th class="th" scope="row"><img alt="GOLD" src="./img/gold.jpg" width="250px" height="180px"></th>
             <td><h5> 골드</h5>
             <h5> 예매 횟수 20번 이상일시 20% 할인 </h5>
             </td>

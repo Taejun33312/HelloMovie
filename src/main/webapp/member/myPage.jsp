@@ -69,8 +69,11 @@ display: inline;
 </style>
 </head>
 <body class="post-template page-template page">
-<div class="site-wrapper">
-<jsp:include page="../inc/top.jsp"/>.
+
+<div class="main-nav overlay clearfix">
+	<jsp:include page="../inc/top.jsp"/>
+</div>
+
 	<header class="main-header post-head " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/10/10174958/fas-compressor.jpg)">
 
 	<div class="vertical">
@@ -80,38 +83,37 @@ display: inline;
 					<span class=""><a href="MemberUpdate.me">회원정보 수정</a></span>
 					<span><a href="MyTicketInfo.bk?Mem_num=${dto.mem_num }">예매내역</a></span> 
 					<span class=""><a href="Bonus.me">등급확인</a></span>
-					<span class=""><a href="">결제내역</a></span>
 					<span class=""><a href="">1:1 문의내역</a></span>
 					<span class=""><a href="Delete.me">회원탈퇴</a> </span>
 				</div>
 		</div>
 	</div>
-	</header>
+	</header>	
 	
+	<div class="site-wrapper">
  	<main class="content" role="main">
 	<article class="post tag-fashion tag-art page">
 	<section class="post-content">
+	
 		<!-- 프로필 -->
-
 		<img src="./img/user.png" class="user">
 			<div class="text">
 				<h3>${dto.mem_name}님 </h3> 
 				<h4> ${dto.mem_grade } 등급</h4>
 			</div>
-
 		<!-- 프로필 -->
 	
-		<!-- totalList 순서 : bdto, mvdto, scdto, tdto -->
-		<div class="membercard">
-			<!-- 예매 내역 없을 경우 -->
-		    <c:if test="${empty totalList }">
+		<!-- 예매 내역 없을 경우 -->
+	    <c:if test="${empty totalList }">
+			<div class="membercard">
 				<h3>최근 예매 내역이 없습니다.</h3>
 				<div class="btn-area">
 					<button id="btn" type="submit" onclick="location.href='./Booking.bk';">예매 바로가기</button>
 				</div>
-			</c:if>
-		</div>	
+			</div>	
+		</c:if>
 			
+		<!-- totalList 순서 : bdto, mvdto, scdto, tdto -->
 			<c:forEach var="s" items="${totalList}">
 			
 				<div class="membercard">
@@ -125,7 +127,7 @@ display: inline;
 						${s[2].sc_name } <br>
 						좌석 번호 : ${s[0].s_num} <br>
 						청소년 : ${s[0].youth_num}명 /
-						성인 : ${s[0].adult_num}명-->
+						성인 : ${s[0].adult_num}명
 				</div>
 
 			</c:forEach>
@@ -133,7 +135,8 @@ display: inline;
     </section>
 	</article>
 	</main> 
-
+	
+	<jsp:include page="../inc/footer.jsp" />
 
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

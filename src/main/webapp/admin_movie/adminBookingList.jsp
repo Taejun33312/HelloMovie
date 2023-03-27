@@ -68,8 +68,7 @@
 				<td class="">${bdto.total_price }</td>
 				<td class="">${bdto.b_cancel }</td>
 				
-				<td><a href="#none">수정</a>
-				<a href="#none">삭제</a></td>
+				<td class="btn-gradient red mini" ><a href="#none">삭제</a>
 		   		
 		    </tr>
 

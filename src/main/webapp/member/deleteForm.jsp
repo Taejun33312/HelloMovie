@@ -47,5 +47,7 @@ href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic
 	</form>
 </section>
 
+	<jsp:include page="../inc/footer.jsp" />
+
 </body>
 </html>

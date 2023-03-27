@@ -1467,16 +1467,20 @@ h2.widget-title {
 }
 /* ========================================================================== 10. Footer - The bottom of every page ========================================================================== */
 .site-footer {
-	position:relative;
+	position:absolute;
 	margin:0rem 0 0 0;
-	padding:4rem 15px;
+	padding:2rem 15px;
 	font-size:1.3rem;
 	text-transform:uppercase;
-	line-height:1.75em;
+	line-height:30px;
 	color:rgba(255,255,255,0.5);
 	background:#1d1d1d;
 	letter-spacing:1px;
 	font-family:Playfair Display;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	
 }
 .site-footer a {
 	text-decoration:none;
@@ -1486,6 +1490,9 @@ h2.widget-title {
 .site-footer a:hover {
 	color:#fff;
 }
+
+
+
 .poweredby {
 	display:block;
 	width:45%;

@@ -114,10 +114,18 @@ public class FrontController extends HttpServlet{
 		else if (command.equals("/Login.me")) {
 			System.out.println(" C : /Login.me 호출! ");
 			
+			action = new LoginPro();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			// 패턴1
-			forward = new ActionForward();
-			forward.setPath("./member/loginForm.jsp");
-			forward.setRedirect(false); 
+//			forward = new ActionForward();
+//			forward.setPath("./member/loginForm.jsp");
+//			forward.setRedirect(false); 
 		} 
 		
 		else if (command.equals("/LoginAction.me")) {

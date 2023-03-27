@@ -67,8 +67,8 @@
 <%-- 				<td class="left">${dto.mem_rCount }</td>
  --%>				
 				<td>
-				<a href="./AdMemInfoUpdate.mm?Mem_num=${dto.mem_num}">수정</a>/
-				<a href="./AdMemInfodelete.mm?Mem_num=${dto.mem_num}">삭제</a></td>
+				<a href="./AdMemInfoUpdate.mm?Mem_num=${dto.mem_num}"  class="btn-gradient red mini">수정</a>
+				<a href="./AdMemInfodelete.mm?Mem_num=${dto.mem_num}" class="btn-gradient red mini">삭제</a></td>
 		   
 		    </tr>
 	    </c:forEach>
