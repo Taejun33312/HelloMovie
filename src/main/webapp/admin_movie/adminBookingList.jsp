@@ -67,9 +67,12 @@
 				<td class="">${bdto.total_price }</td>
 				<td class="">${bdto.b_cancel }</td>
 				
+
 				<td>
-				<a href="./AdminBookingDelete.mm?B_num=${bdto.b_num } " class="btn-gradient red mini">삭제</a></td>
-		   		
+				<a href="./AdminBookingDelete.mm?B_num=${bdto.b_num } " class="btn-gradient red mini">삭제</a>
+        </td>
+				
+		  
 		    </tr>
 
 	    </c:forEach>

@@ -30,9 +30,10 @@ integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7g
 
 <section class="login-form">
    <div class="panel border bg-white">
-  <!--s  <h1>안영화세요</h1>	-->
-    <img src="assets/img/logo2.png" width="150px" > 
+  	<h1>안영화세요</h1>
+<!--     <img src="assets/img/logo2.png" width="150px" >  -->
         <form action="./LoginAction.me?" method="post">
+        <input type="hidden" name="referer" value="${referer }">
         <input type="hidden" name="Mem_num" id="Mem_num">
         <input type="hidden" name="name" >
             <div class="int-area">         
@@ -57,6 +58,7 @@ integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7g
 			<div class="text-center py-3">						
 			<!-- 네이버 로그인 관련 -->
 			 <div id="naver_id_login"></div>
+			 
 			 <!-- 카카오 로그인 버튼 시작 -->
 			<a href="javascript:kakaoLogin();">
 			<img src="img/kakaoLogo.png" alt="카카오계정 로그인" style="width: 185px;"/></a>
@@ -149,12 +151,7 @@ Kakao.init('7b8ba339d869370b95d680c83b575837'); //발급받은 키 중 javascrip
 	</script>
 <!-- 카카오 로그인 스크립트 끝 -->
  
-<footer class="site-footer clearfix">
-	<div class="text-center">
-		<a>안영화세요</a><br>Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-		All rights reserved 
-	</div>
-</footer>
+	<jsp:include page="../inc/footer.jsp" />
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="assets/js/masonry.min.js"></script>
