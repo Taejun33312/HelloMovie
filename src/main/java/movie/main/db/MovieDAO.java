@@ -362,4 +362,28 @@ public class MovieDAO {
 			}
 
 			// 영화 예매 목록 = getBookingList(
+			
+			// 예매 삭제
+
+			public void deleteBooking(int B_num) {
+				try {
+					con = getCon();
+					sql = "delete from booking where B_num=?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setInt(1, B_num);
+					
+					pstmt.executeUpdate();
+				
+					System.out.println(" DAO : 예매 삭제완료!");
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					closeDB();
+				}
+			}
+			
+			// 예매 삭제
+			
+			
+			
 }
