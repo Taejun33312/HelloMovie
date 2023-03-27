@@ -59,7 +59,7 @@ img{
 		<c:set var="list" value="${dailyList[num] }"/>
 		<c:set var="img" value="${imgList[num] }"/>
 			<c:forEach var="dto" items="${movieList }">
-				<a href="./movieDetail.mv?movieNm=${dto.getM_name() }&movieSalesRate=${dto.getM_reservationRate() }&movieCd=${d.getM_num() }">	
+				<a href="./movieDetail.mv?movieNm=${dto.getM_name() }&movieSalesRate=${dto.getM_reservationRate() }&movieCd=${dto.getM_num() }">	
 					<div style="float:left">
 						<img src="./upload/${dto.m_img }" onerror="this.style.display='none';"
 						       width="245px" height="340px" alt=""></a>
