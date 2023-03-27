@@ -14,11 +14,8 @@
     }
     </style>
 </head>
-
+	
 	<c:forEach var="screenList" items="${screenList }">
-		<ul>
-			<li id="choiceMovie">
 			<input type="radio" name="Sc_num" value="${screenList.sc_num }">${screenList.sc_name }  <br> </li>
-		</ul>
 	</c:forEach>
 	</html>

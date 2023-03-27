@@ -113,7 +113,8 @@ public class BookingDAO {
 			con = getCon();
 			sql = "SELECT T_date, MIN(T_num) AS T_num, MIN(Sc_num) AS Sc_num, MIN(M_num) AS M_num, \r\n"
 					+ "    MIN(T_startTime) AS T_startTime, MAX(T_endTime) AS T_endTime\r\n" + "FROM time\r\n"
-					+ "WHERE M_num = ? AND Sc_num = ? AND T_date >= CURDATE()\r\n" + "GROUP BY T_date order by T_startTime asc";
+					+ "WHERE M_num = ? AND Sc_num = ? AND T_date >= CURDATE()\r\n"
+					+ "GROUP BY T_date order by T_startTime asc";
 			pstmt = con.prepareStatement(sql);
 
 			pstmt.setString(1, M_num);
@@ -335,15 +336,15 @@ public class BookingDAO {
 		}
 	}
 
+	// 예매내역 출력
 	public List myTicketInfo(int Mem_num) {
 
-		List ticketList = new ArrayList();
+		List totalList = new ArrayList();
 
 		BookingDTO bdto = null;
 		MovieDTO mvdto = null;
 		ScreenDTO scdto = null;
 		TimeDTO tdto = null;
-
 		System.out.println(Mem_num);
 
 		try {
@@ -356,13 +357,13 @@ public class BookingDAO {
 					+ "left join time t on b.T_num = t.T_num " + "where Mem_num=? "
 					+ "group by B_booking_num, m.M_name, t.T_num, s.Sc_name, "
 					+ "b.S_num, b.Youth_num, b.Adult_num, b.Total_price, b.B_payment";
-
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, Mem_num);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 
+				List ticketList = new ArrayList();
 				bdto = new BookingDTO();
 				mvdto = new MovieDTO();
 				scdto = new ScreenDTO();
@@ -374,7 +375,6 @@ public class BookingDAO {
 				bdto.setAdult_num(rs.getInt("Adult_num"));
 				bdto.setTotal_price(rs.getInt("Total_price"));
 				bdto.setB_payment(rs.getString("B_payment"));
-
 				mvdto.setM_name(rs.getString("M_name"));
 				scdto.setSc_name(rs.getString("Sc_name"));
 				tdto.setT_startTime(rs.getString("T_startTime"));
@@ -385,9 +385,11 @@ public class BookingDAO {
 				ticketList.add(scdto);
 				ticketList.add(tdto);
 
+				totalList.add(ticketList);
+
 			}
 
-			System.out.println(" 예매내역 상세 정보 @@@@  : " + ticketList);
+			System.out.println(" 예매내역 상세 정보 @@@@  : " + totalList);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -395,7 +397,7 @@ public class BookingDAO {
 			closeDB();
 		}
 
-		return ticketList;
+		return totalList;
 
 	}
 }

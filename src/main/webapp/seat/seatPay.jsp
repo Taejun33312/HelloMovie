@@ -35,7 +35,7 @@
 	            pay_method : 'card',
 	            merchant_uid: "${Book_num }", 
 	            name : '${M_name}',
-	            amount : 100,
+	            amount : totalPrice,
 	            buyer_email : 'Iamport@chai.finance',
 	            buyer_name : '${M_name}',
 	            buyer_tel : '{scDTO.sc_phonenumber}',
