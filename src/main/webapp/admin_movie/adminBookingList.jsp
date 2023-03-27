@@ -30,8 +30,8 @@
 	
 	<main class="content" role="main">
 
-	<input type ="hidden" name="B_num" value="${dto.b_num }">
-	<table id="notice">
+<%-- 	<input type ="hidden" name="B_num" value="${dto.b_num }">
+ --%>	<table id="notice">
 		<tr>
 		
 		    <th class="">예약 번호</th>
@@ -41,12 +41,11 @@
 		    <th class="">영화 번호</th>
 		    <th class="">회원 번호</th>
 		    <th class="">좌석 </th>
-		    <th class="">총 가격</th>
 		    <th class="">성인</th>
 		    <th class="">청소년</th>
 		    <th class="">예약 시간</th>
-		    <th class="">결제 금액</th>
 		    <th class="">결제 정보</th>
+		    <th class="">총 가격</th>
 		    <th class="">예약 여부</th>
 		    
 		</tr>
@@ -62,12 +61,11 @@
 				<td class="">${bdto.m_num }</td>
 				<td class="">${bdto.mem_num }</td>
 				<td class="">${bdto.s_num }</td>
-				<td class="">${bdto.total_price }</td>
 				<td class="">${bdto.youth_num }</td>
 				<td class="">${bdto.adult_num }</td>
 				<td class="">${bdto.b_dateTime }</td>
-				<td class="">${bdbto.b_payment }</td>
-				<td class="">${bdbto.b_payInfo }</td>
+				<td class="">${bdto.b_payment }</td>
+				<td class="">${bdto.total_price }</td>
 				<td class="">${bdto.b_cancel }</td>
 				
 				<td><a href="#none">수정</a>
