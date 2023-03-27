@@ -30,8 +30,7 @@
 	
 	<main class="content" role="main">
 
-<%-- 	<input type ="hidden" name="B_num" value="${dto.b_num }">
- --%>	<table id="notice">
+	<table id="notice">
 		<tr>
 		
 		    <th class="">예약 번호</th>
@@ -68,8 +67,12 @@
 				<td class="">${bdto.total_price }</td>
 				<td class="">${bdto.b_cancel }</td>
 				
-				<td class="btn-gradient red mini" ><a href="#none">삭제</a>
-		   		
+
+				<td>
+				<a href="./AdminBookingDelete.mm?B_num=${bdto.b_num } " class="btn-gradient red mini">삭제</a>
+        </td>
+				
+		  
 		    </tr>
 
 	    </c:forEach>

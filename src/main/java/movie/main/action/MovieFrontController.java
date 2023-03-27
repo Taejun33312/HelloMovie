@@ -176,7 +176,16 @@ public class MovieFrontController extends HttpServlet{
 			}
 		}
 		 
-		 
+		else if(command.equals("/AdminBookingDelete.mm")) {
+			System.out.println("AdminBookingDelete.mm 호출");
+			action = new AdminBookingDelete();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
 		 
 		 
 		
