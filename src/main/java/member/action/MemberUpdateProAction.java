@@ -34,7 +34,7 @@ public class MemberUpdateProAction implements Action {
 
 
 		//String mem_id = request.getParameter("mem_id"); // checkId 메서드 쓰는 용(안되면지울거임)
-		String mem_email = request.getParameter("mem_email");
+//		String mem_email = request.getParameter("mem_email");
 		String phone1 = request.getParameter("phone1");
 		String phone = request.getParameter("phone1")+"-"+request.getParameter("phone2")+"-"+request.getParameter("phone3");
 		
@@ -64,7 +64,7 @@ public class MemberUpdateProAction implements Action {
 		dto.setMem_id(request.getParameter("mem_id"));
 		dto.setMem_pw(request.getParameter("mem_pw"));
 		//dto.setMem_name(request.getParameter("mem_name"));
-		dto.setMem_email(request.getParameter("mem_email"));
+//		dto.setMem_email(request.getParameter("mem_email"));
 		dto.setMem_birth(birth);
 		if(phone1=="") {
 			dto.setMem_phone(null);

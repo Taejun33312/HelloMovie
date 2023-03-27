@@ -181,19 +181,18 @@ public class MemberDAO {
 
 				if (dto.getMem_id().equals(rs.getString("Mem_id"))) {
 					// 3 sql (수정)
-					sql = "update member set Mem_pw=?, Mem_email=?, Mem_birth=?, Mem_phone=?, Mem_postcode=?, Mem_addr1=?, Mem_addr2=?, Mem_addr3=?, Mem_mType=? where Mem_id=?";
+					sql = "update member set Mem_pw=?, Mem_birth=?, Mem_phone=?, Mem_postcode=?, Mem_addr1=?, Mem_addr2=?, Mem_addr3=?, Mem_mType=? where Mem_id=?";
 					pstmt = con.prepareStatement(sql);
 
 					pstmt.setString(1, dto.getMem_pw());
-					pstmt.setString(2, dto.getMem_email());
-					pstmt.setString(3, dto.getMem_birth());
-					pstmt.setString(4, dto.getMem_phone());
-					pstmt.setString(5, dto.getMem_postcode());
-					pstmt.setString(6, dto.getMem_addr1());
-					pstmt.setString(7, dto.getMem_addr2());
-					pstmt.setString(8, dto.getMem_addr3());
-					pstmt.setString(9, dto.getMem_mType());
-					pstmt.setString(10, dto.getMem_id());
+					pstmt.setString(2, dto.getMem_birth());
+					pstmt.setString(3, dto.getMem_phone());
+					pstmt.setString(4, dto.getMem_postcode());
+					pstmt.setString(5, dto.getMem_addr1());
+					pstmt.setString(6, dto.getMem_addr2());
+					pstmt.setString(7, dto.getMem_addr3());
+					pstmt.setString(8, dto.getMem_mType());
+					pstmt.setString(9, dto.getMem_id());
 
 					result = pstmt.executeUpdate();
 
