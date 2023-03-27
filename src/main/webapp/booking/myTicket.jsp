@@ -1,3 +1,4 @@
+<%@page import="project.movie.booking.db.BookingDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
@@ -12,6 +13,23 @@
 <link rel="shortcut icon" href="#">
 <link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
+
+<style type="text/css">
+
+.membercard {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+	width: 40%;
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+ 
+
+</style>
 </head>
 
 <body class="post-template page-template page">
@@ -23,7 +41,7 @@
 				<h1 class="post-title">My page</h1>
 					<div class="author-meta">
 					<span class=""><a href="MemberUpdate.me">회원정보 수정</a></span>
-					<span><a href="">예매확인</a></span> 
+					<span><a href="">예매내역</a></span> 
 					<span class=""><a href="Bonus.me">등급확인</a></span>
 					<span class=""><a href="">결제내역</a></span>
 					<span class=""><a href="">1:1 문의내역</a></span>
@@ -37,13 +55,27 @@
 	<article class="post tag-fashion tag-art page">
 	<section class="post-content">
 		
-		<!--  해당 회원의 총 예매내역 출력 -->
-			<c:forEach var="s" items="${ticketList }}">
-
-					${s }
 		
+			<c:forEach var="s" items="${totalList}">
+			
+				<div class="membercard">
+					<!--  해당 회원의 총 예매내역 출력 -->
+					
+					<img class="logo" src="assets/img/logo2.png" width="120px" >
+					예매번호: ${s[0].b_booking_num} 
+					<h2> ${s[1].m_name } </h2>
+					${s[3].t_date } 
+					${s[3].t_startTime } 
+					${s[2].sc_name } <br>
+					좌석 번호 : ${s[0].s_num} <br>
+					청소년 : ${s[0].youth_num}명 /
+					성인 : ${s[0].adult_num}명 <br>
+					총금액 : ${s[0].total_price }원 <br>
+					결제수단 : ${s[0].b_payment }
+				</div>
 
 			</c:forEach>
+			
 	</section>
 	</article>
 	</main>
