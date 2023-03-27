@@ -78,7 +78,7 @@ public class ReviewDAO {
 		
 		try {
 			con = getCon();
-			sql = "select * from review where M_num=?";
+			sql = "select review.*,member.Mem_id from review join member on review.Mem_num = member.Mem_num where M_num=? order by review_date desc";
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, M_num);
@@ -91,6 +91,7 @@ public class ReviewDAO {
 				dto.setReview(rs.getString(3));
 				dto.setM_grade(rs.getInt(4));
 				dto.setReview_date(rs.getDate(5));
+				dto.setMem_id(rs.getString(6));
 				
 				reviewList.add(dto);
 			}
@@ -102,16 +103,34 @@ public class ReviewDAO {
 		} finally {
 			closeDB();
 		}
-		
-		
-		
-		
 		return reviewList;
 	}
 	
 	
 	// getMovieReview(String M_num)
 	
+	
+	// deleteReview(int Mem_num, String M_num)
+	public void deleteReview(int Mem_num, String M_num) {
+		try {
+			con = getCon();
+			sql = "delete from review where Mem_num=? and M_num=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, Mem_num);
+			pstmt.setString(2, M_num);
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+	}
+	// deleteReview(int Mem_num, String M_num)
+	
+
 	
 	
 	

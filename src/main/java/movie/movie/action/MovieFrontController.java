@@ -128,6 +128,17 @@ public class MovieFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 
+		} else if(command.equals("/reviewDelete.mv")) {
+			System.out.println(" /reviewDelete.mv 호출 ");
+			
+			action = new ReviewDeleteAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		System.out.println("\n 2. 가상주소 매핑 - 끝 ");

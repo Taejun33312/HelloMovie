@@ -80,6 +80,20 @@
 					
 				});
 			});
+			
+			$('#form').submit(function(){
+				if($('.texta').val() == "" ){
+					alert('리뷰 작성');
+					return false;
+				}
+			});
+			
+			$('#form').submit(function(){
+				if($('.grade').val() == 0){
+					alert('평점 선택');
+					return false;
+				}
+			});
 
 			
 			
@@ -96,12 +110,12 @@
 
 </head>
 <body class="author-template">
-<div class="site-wrapper">
+<div class="site-wrapper" style="height:100%">
 	<jsp:include page="../inc/top.jsp"/>
 	
-		<div>
+		<div style="height:50%">
 		<div class="detailDiv1">
-			<img src="<%=img%>" width="300px">
+			<img src="<%=img%>" width="300px" style="float:right; margin-right:100px;">
 		</div>
 		
 		<div class="detailDiv2">
@@ -118,42 +132,28 @@
 			평점 : <%=userRating %><br>
 			예매율 : <%=reservationRate %>%<br>
 			</span>
-			
-			시간표
-			<br>
-			<f:formatDate value="${now }" var="today" pattern="yyyy-MM-dd HH:mm"/>
-
-			<c:forEach items="${tList }" var="tList">
-				<c:if test="${tList.t_date > today }">
-					상영일 : ${tList.t_date }
-					시작시간 : <a href='./seatChoice.st?T_num=${tList.t_num }&Sc_num=${tList.sc_num}&M_num=${movieCd }&M_name=${movieNm }' class="a">${tList.t_startTime }</a>
-					종료시간 : ${tList.t_endTime }
-					<br>
-				</c:if>
-			</c:forEach>
-			
-			
-			
+			<input type="button" value="예매하기" class="btn-gradient red mini" onclick="location.href='Booking.bk'">
 			
 		</div>	
 		
 		</div>
-		<hr>
+		
 		<div class="detailDiv3">
+		
 			<h4> 한줄평 및 평점 </h4>
 			
-			<form action="movieReview.mv">
+			<form action="movieReview.mv" id="form">
 				<input type="hidden" value="${movieCd }" name="M_num">
-				한줄평 : <textarea cols="100" class="texta" name="Review"></textarea>
-				<select name="grade">
-					<option>평점 선택</option>
+				한줄평 : <textarea rows="1" cols="100" class="texta" name="Review"></textarea>
+				<select name="grade" class="grade">
+					<option value="0">평점 선택</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
 					<option value="4">4</option>
 					<option value="5">5</option>
 				</select>
-				<input type="submit" value="등록">
+				<input type="submit" value="등록" class="btn-gradient red mini">
 			</form>
 			
 		<table id="reviewT" >
@@ -163,19 +163,22 @@
 				<th>평점</th>
 				<th>등록일</th>
 			</tr>
-			
 			<c:forEach var="reviewList" items="${reviewList }">
 				<tr>
-					<td>${reviewList.mem_num }</td>
+					<td>${reviewList.mem_id }</td>
 					<td>${reviewList.review }</td>
 					<td>${reviewList.m_grade }</td>
 					<td>${reviewList.review_date }</td>
+					
+					<c:if test="${reviewList.mem_id eq id || id eq 'admin'}">
+						<td><input type="button" value="삭제" onclick="location.href='reviewDelete.mv?M_num=${movieCd}&Mem_num=${reviewList.mem_num }'" class="btn-gradient red mini"></td>
+					</c:if>
 				</tr>
 			</c:forEach>
 			
 		</table>
-		
 		</div>
+		
 		
 	
 	<jsp:include page="../inc/footer.jsp"/>

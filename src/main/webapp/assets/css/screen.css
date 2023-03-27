@@ -2817,13 +2817,13 @@ span.socialheader {
 }
 .detailDiv1 {
 	width:50%;
-	height:50%;
+	height:100%;
 	float:left;
 	text-align: center;
 }
 .detailDiv2 {
 	width:50%;
-	height:50%;
+	height:100%;
 	color:black;
 	float:left;
 }
