@@ -9,13 +9,17 @@
     <title>Hello Movie</title>
     
     <style type="text/css">
-    li{
-    	list-style: none;
-    }
+	input {
+	    padding: 6px 5px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}    
     </style>
 </head>
 	
 	<c:forEach var="screenList" items="${screenList }">
-			<input type="radio" name="Sc_num" value="${screenList.sc_num }">${screenList.sc_name }  <br> </li>
+			<input type="radio" name="Sc_num" value="${screenList.sc_num }">${screenList.sc_name }  <br> 
 	</c:forEach>
 	</html>

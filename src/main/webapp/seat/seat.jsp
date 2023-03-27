@@ -217,7 +217,7 @@
 			<input type="hidden" value="" name="yNum">
 			<input type="hidden" value="${T_num }" name="T_num">
 			<hr>
-			<input type="submit" value="예매하기">
+			<input type="submit" class="payButton" value="예매하기">
 		
 		</form>	
 		

@@ -66,7 +66,7 @@ img{
 						       <br>
 						<a href="#none"  class="btn-gradient yellow mini"  >
 						<span style="color: black;"> 예매율${dto.m_reservationRate }%</span></a>					
-							 <a href="./movieBooking?M_num=${dto.m_num }" class="btn-gradient red mini" > 예매하기 </a>
+							 <a href="./Booking.bk" class="btn-gradient red mini" > 예매하기 </a>
 					</div>
 	    </c:forEach>
 	</c:if>

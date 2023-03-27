@@ -170,7 +170,7 @@
 		
 		<hr color="black">
 		
-		<input type="button" value="결제" name="pay" style="float:right">
+		<input type="button" class="payButton" value="결제" name="pay" style="float:right">
 	</form>
 	
 		

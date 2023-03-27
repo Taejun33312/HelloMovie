@@ -224,7 +224,7 @@
                 </div>
             </div>
         </div>
-        <div class="day-part">
+        <div class="day-part" style="width: 264px;">
             <div class="reserve-title">날짜</div>
             <div class="reserve-date">
              <!-- <button name="movieDate"></button> -->
@@ -237,12 +237,7 @@
                 </div>
             </div>
 			
-            <div>
-            <!-- <input type="text" name="M_num" value="">
-            <input type="hidden" class="movieAge" name="movieAge">
-            <input type="text" name="Sc_num" value="">
-            <input type="text"  name="T_date" value="">
-            <input type="text"  name="T_num" value=""> -->
+            <div class="aaa" style="">
             <button class="moveSeatButton" type="submit">좌석 선택 하기</button>
             </div> 
         </div>

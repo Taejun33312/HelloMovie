@@ -38,7 +38,7 @@
 			<!-- <li>강남의 중심! 강남 소비문화의 중심지인 지하철 2호선 , 신분당선 - 강남역과 연결
 로맨틱 멀티플렉스! 젊은 도시 강남이 한 눈에 보이는 최상의 View를 제공</li>	 -->	
 		</ul>
-		<input class="btn-gradient red mini" style="margin-bottom: 30px;" type="button" value="예매하기" onclick="location.href='./Booking.bk'"><!-- ./예매 페이지 이동(Sc_num 받아야 됨) -->
+		<input class="btn-bk" style="margin-bottom: 30px;" type="button" value="예매하기" onclick="location.href='./Booking.bk'"><!-- ./예매 페이지 이동(Sc_num 받아야 됨) -->
 		
 	</section>
 	</article>
