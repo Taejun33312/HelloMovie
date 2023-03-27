@@ -1,10 +1,12 @@
 package movie.movie.action;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import movie.movie.db.MovieDAO;
 import movie.movie.db.NaverAPIDTO;
@@ -16,6 +18,9 @@ public class MovieDetailAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println(" MovieDetailAction_execute 호출 ");
 		
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		
 		String movieNm = request.getParameter("movieNm");
 		String movieCd = request.getParameter("movieCd");
 		
@@ -23,6 +28,7 @@ public class MovieDetailAction implements Action {
 		NaverAPIDTO dto = api.getNaverAPI(movieNm);
 		ReviewDAO dao = new ReviewDAO();
 		List reviewList = dao.getMovieReview(movieCd);
+		System.out.println("@@@@@@@@@@"+reviewList);
 		
 		request.setAttribute("reviewList", reviewList);
 		
@@ -31,10 +37,8 @@ public class MovieDetailAction implements Action {
 		
 		MovieDAO Mdao = new MovieDAO();
 		List tList = Mdao.getTime(movieCd);
-		
-		Date now = new Date();
 
-		request.setAttribute("now", now);
+		request.setAttribute("id", id);
 		request.setAttribute("tList", tList);
 		request.setAttribute("movieCd", movieCd);
 		request.setAttribute("movieNm", movieNm);

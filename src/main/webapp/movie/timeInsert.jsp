@@ -38,47 +38,56 @@
 <div class="site-wrapper">
 	<jsp:include page="../inc/top.jsp" />
 	<header class="main-header author-head " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/30162427/sep2.jpg)">
+		<div class="datetype1">
+	
+		<h2 style="color:white; margin-top:100px">영화 시간 등록</h2>
+
+		
+	</div>
+		
+	
 	</header>
 	
-	<main class="content" role="main">
+	<main class="content" role="main" style="height:100%">
 	<div class="grid">
 		<div class="grid-item">
-			<article class="post">
 			
 			<form action="./timeInsertProAction.mv">
-			
-				상영점 : 
-				<select name="Sc_num">
-					<option value="" selected>상영점 선택</option>
-					<c:forEach items="${sList }" var="sList">
-						<option value="${sList.sc_num }">${sList.sc_zone } ${sList.sc_name }</option>
-					</c:forEach>
+				<table>
+					<tr>
+						<td>상영점</td>
+						<td>영화명</td>
+						<td>날짜</td>
+						<td>시작시간</td>
+						<td>종료시간</td>
+					</tr>
+					<tr>
+						<td><select name="Sc_num">
+							<option value="" selected>상영점 선택</option>
+								<c:forEach items="${sList }" var="sList">
+							<option value="${sList.sc_num }">${sList.sc_zone } ${sList.sc_name }</option>
+								</c:forEach>
 					
-				</select><br>
-				
-				영화명 : 
-				<select name="M_num">
-					<option value="" selected>영화명 선택</option>
-					<c:forEach items="${List }" var="List">
-						<option value="${List.m_num }">${List.m_name }</option>
-					
-					</c:forEach>
-				</select><br>
-				
-				날짜 : 
-				<input type="date" name="T_date" id="Date"><br>
-				
-				시작시간 : 
-				<input type="time" name="T_startTime"><br>
-				
-				종료시간 : 
-				<input type="time" name="T_endTime"><br>
+							</select>
+						</td>
+						<td>
+							<select name="M_num">
+								<option value="" selected>영화명 선택</option>
+									<c:forEach items="${List }" var="List">
+								<option value="${List.m_num }">${List.m_name }</option>
+									</c:forEach>
+							</select>
+						</td>
+						<td><input type="date" name="T_date" id="Date"></td>
+						<td><input type="time" name="T_startTime"></td>
+						<td><input type="time" name="T_endTime"></td>
+					</tr>
+				</table>
 				
 				<input type="submit" value="등록">
 				
 			</form>
-			
-			</article>
+
 		</div>
 		
 	</div>
