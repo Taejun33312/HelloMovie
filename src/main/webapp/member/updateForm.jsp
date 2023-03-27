@@ -48,8 +48,8 @@ $(document).ready(function () {
     'use strict';
 	
      var usernameError = false, 
-        emailError    = true,
-        emailCodeError= true,
+        emailError    = false,
+        emailCodeError= false,
         passwordError = true,
         passConfirm   = true,
     	idError 	  = false,
@@ -57,36 +57,13 @@ $(document).ready(function () {
     	bir_ddError   = true,
 	    phoneError    = false,
 	    typeError     = false; 
-/*     var usernameError,
-        emailError,
-        emailCodeError,
-        passwordError,
-        passConfirm,
-    	idError,
-   		bir_yyError,
-    	bir_ddError,
-	    phoneError,
-	    typeError; */
+
 	
     var randomCode 	  = "";
     
 	var error;
 	var date = new Date();
-	
-    
 
-    
-    
-/*     $(function error() {
-        for(var i=0; i<ErrorArray.length; i++) {
-        	console.log(i+"번째 에러"+ErrorArray[i]);
-        }
-    	
-    });
-     */
-
-    
-    
     // Detect browser for css purpose
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
         $('.form form label').addClass('fontSwitch');
@@ -102,95 +79,7 @@ $(document).ready(function () {
     
     
     
-    
-    $('.sendEmail').click(function sendEmail(){
-  	  if ($('.email').val().length === 0) {
- 		   
-            $('.emailCode').siblings('span.error').text('이메일을 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
-            emailError = true;
- 	   }else if ($('.email').val().length > 0) {
-     	 var regEmail = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-     	 var mem_email = $('.email').val();
-     	 if(regEmail.test($('.email').val())){
-     		 $.ajax({
-     				
-     				url:"./MemberJoinCheckAction.me",
-     				type:"post",
-     			 	data:{mem_email:mem_email},
-     				//dataType:"text",
-     				success:function(data){
-     					//alert("성공");
-     					console.log(data);
-     					
-          		 		 if(data==1){
-        		 			 //console.log("zz")
-        		 			 if($('.email').val()=="${dto.mem_email}") { // 기존 이메일과 같을 경우 emailError false
-    	            		 console.log('기존과 같음');
-    	            		 $('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-    	                     emailError = false
-    	        	 		  } else {
-        		             $('.emailCode').siblings('span.error').text('사용중인 이메일입니다.').fadeIn().parent('.form-group').addClass('hasError');
-        		 			 emailError = true;
-    	        	 		  }
-        		 		 } else {
-        		 			$('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-        		 			 emailError = false;
-        		 		
-     		 			 
-     		 		 	var mem_email = $('.email').val();
-     		     	console.log(mem_email);
-     		     	if(emailError==false) {
-     		     		console.log('이메일 에러없음 - 전송가능한 상태');
-     		 			$('.emailCode').siblings('span.error').text('인증번호가 전송되었습니다.').fadeIn().parent('.form-group').addClass('hasError');
-     		     	 $.ajax({
-     		 				
-     		 				url:"./SendEmailAction.me",
-     		 				type:"post",
-     		 			 	data:{mem_email:mem_email},
-     		 				//dataType:"text",
-     		 				success:function(data){
-     		 					randomCode = data;
-     		 					//console.log(randomCode); // 이메일 인증코드 출력
-     		 					
-     		 		             
-     		 				},
-     		 				error:function(data){
-     		 					alert("실패");
-     		 					// 페이지 이동 후 실패했을 때 동작
-     		 				}
-     		 				
-     		 			});  
-     		     	} else {
-     		     		console.log('이메일 에러 있음 - 전송불가능');
-     		     		$('.email').blur();
-     		              
-     		     	}
-     		 		 }
-     		         
-     				},
-     				error:function(data){
-     					alert("실패");
-     					// 페이지 이동 후 실패했을 때 동작
-     				}
-     				
-     			});  
-         $('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-         emailError = false;
 
-  	
- 	
-     } else {
-         $('.emailCode').siblings('span.error').text('이메일 주소를 다시 확인해주세요.').fadeIn().parent('.form-group').addClass('hasError');
-         emailError = true;
-     }
-     }
-  	
- 
-  	
-  });
-  
-    
-    
     // Form validation
     $('input').blur(function () {
 
@@ -215,144 +104,7 @@ $(document).ready(function () {
         
         
         
-        // id
-      /*   if ($(this).hasClass('id')) {
-        	
-        	   if ($(this).val().length === 0) {
-                   $(this).siblings('span.error').text('아이디를 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
-                   idError = true;
-                   } else if($(this).val().length > 0) {
-		        	var regId = /^[a-z]+[a-z0-9]{5,19}$/g;
-		            var mem_id = $(this).val();
-			        	 if(!(regId.test($(this).val()))){
-			        		 console.log(mem_id);
-			            $(this).siblings('span.error').text('6~20자의 영문 소문자, 숫자만 사용 가능합니다.').fadeIn().parent('.form-group').addClass('hasError');
-			            idError = true;
 
-			       		 } else {
-				            $.ajax({
-							//url:"./IdCheckAction",
-							url:"./MemberJoinCheckAction.mj",
-							type:"post",
-						 	data:{mem_id:mem_id},
-							//dataType:"text",
-							success:function(data){
-								//alert("성공");
-								//console.log(data);
-							
-						 		 if(data==1){
-						 			 //console.log("값이 1임")
-						             $(".id").siblings('span.error').text('사용중인 아이디입니다.').fadeIn().parent('.form-group').addClass('hasError');
-						             idError = true;
-						
-						 		 } else {
-						 			$(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-						 			 idError = false;
-						 		 }
-						         
-								},
-								error:function(data){
-									alert("실패");
-									// 페이지 이동 후 실패했을 때 동작
-								}
-							
-								});  
-	
-				          $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-				 		 idError = false;
-			            //console.log(${checkId});
-			           
-			        	 }
-			        }
-			    }
- */
-
-
-
-        
-		
-        // Email
-        // https://jh91.tistory.com/entry/javescript-%EC%9D%B4%EB%A9%94%EC%9D%BC-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC
-        if ($(this).hasClass('email')) {
-        	 
-        	if ($(this).val().length === 0) {
-        		   
-                   $('.emailCode').siblings('span.error').text('이메일을 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
-                   emailError = true;
-                   
-        	}else if ($(this).val().length > 0) {
-            	 var regEmail = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-            	 var mem_email = $(this).val()
-            	 if(regEmail.test($(this).val())){
-            		
-            		 
-            		 
-            		 $.ajax({
-            				
-            				url:"./MemberJoinCheckAction.me",
-            				type:"post",
-            			 	data:{mem_email:mem_email},
-            				//dataType:"text",
-            				success:function(data){
-            					//alert("성공");
-            					console.log(data);
-            					
-            		 		 if(data==1){
-            		 			 //console.log("zz")
-            		 			 if($('.email').val()=="${dto.mem_email}") { // 기존 이메일과 같을 경우 emailError false
-			            		 console.log('기존과 같음');
-			            		 $('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-			                     emailError = false
-			        	 		  } else {
-            		             $('.emailCode').siblings('span.error').text('사용중인 이메일입니다.').fadeIn().parent('.form-group').addClass('hasError');
-            		 			 emailError = true;
-			        	 		  }
-            		 		 } else {
-            		 			$('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-            		 			 emailError = false;
-            		 		 }
-            		         
-            				},
-            				error:function(data){
-            					alert("실패");
-            					// 페이지 이동 후 실패했을 때 동작
-            				}
-            				
-            			});  
-                $('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-                emailError = false;
-   
-            	
-            	 
-        	
-            	 } else {
-                $('.emailCode').siblings('span.error').text('이메일 주소를 다시 확인해주세요.').fadeIn().parent('.form-group').addClass('hasError');
-                emailError = true;
-            	 }
-        	
-        	   
-        	   }  
-        } 
-        
-			    
- 		// email 본인인증
- 		if($(this).hasClass('emailCode')) {
-
- 			if(emailError==false)
- 			console.log("인증번호: "+randomCode);
-	 		if ($(this).val()==randomCode) {
-	 			  $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-	 	           emailCodeError = false;
-	 		}else {
-	 			  
-	               $(this).siblings('span.error').text('인증번호를 정확하게 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
-	               emailCodeError = true;
-	 		}
- 		}
- 
-
-        // Birth
-        
       
         if ($(this).hasClass('bir_yy')) {
             
@@ -558,8 +310,8 @@ $(document).ready(function () {
  // Form submit
      $('form.signup-form').submit(function (event) {
        
-    	 $('.sendEmail').click();
-    	 $('.id, .email, .emailCode, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
+    	
+    	 $('.id, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
         
     var ErrorArray =
     	[idError,
@@ -587,8 +339,8 @@ $(document).ready(function () {
            if(error==true){
         	   event.preventDefault();
           console.log(error);
-          $('.sendEmail').click();
-        	$('.id, .name, .email, .emailCode, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
+        
+        	$('.id, .name, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
             //console.log("에러있음"+ErrorTrue);
 /*         	  for(var i=0; i<ErrorArray.length; i++) {
               	console.log(i+"번째 에러"+ErrorArray[i]);
@@ -702,16 +454,7 @@ $(document).ready(function () {
 
  
 
-                  <div class="form-group">
-                     <label for="email">이메일</label><br>
-                     <div class="group">
-                     <input type="email" name="mem_email" id="email" class="email" placeholder="" value="${dto.mem_email }">
-                     <input type="button" value="본인인증" id="sendEmail" class="sendEmail"><br>
-                     <span class="error"></span>
-                     </div>
-                     <input type="text" class="emailCode"><br>
-                     <span class="error" ></span>
-                  </div>
+
 
                  <div class="form-group">
                      <label for="birth">생년월일</label><br>

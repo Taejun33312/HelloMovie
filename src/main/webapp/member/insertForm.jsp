@@ -51,7 +51,7 @@ $(document).ready(function () {
     var randomCode 	  = "";
     
 	var error;
-    
+    var emailcheck = 0;
     
 	
     
@@ -85,6 +85,7 @@ $(document).ready(function () {
     
     
     $('.sendEmail').click(function(){
+    	emailcheck=1;
     	if ($('.email').val().length === 0) {
 			$('.emailCode').siblings('span.error').text('이메일을 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
             emailError = true;
@@ -167,10 +168,7 @@ $(document).ready(function () {
         if ($(this).hasClass('name')) {
             if ($(this).val().length === 0) {
                 $(this).siblings('span.error').text('이름을 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
-                usernameError = true;
-/*             } else if ($(this).val().length > 1 && $(this).val().length <= 6) {
-                $(this).siblings('span.error').text('Please type at least 6 characters').fadeIn().parent('.form-group').addClass('hasError');
-                usernameError = true; */
+                usernameError = true;  
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
                 usernameError = false;
@@ -264,9 +262,12 @@ $(document).ready(function () {
             		 			// console.log("zz")
             		             $('.emailCode').siblings('span.error').text('사용중인 이메일입니다.').fadeIn().parent('.form-group').addClass('hasError');
             		             emailError = true;
+            		 		 } else if(emailcheck==0){
+            		 			 $('.emailCode').siblings('span.error').text('본인인증을 해주세요.').fadeIn().parent('.form-group').addClass('hasError');
+            		 			emailError = false;
             		 		 } else {
             		 			$('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-            		 			 emailError = false;
+            		 			 
             		 		 }
             		         
             				},
@@ -276,8 +277,8 @@ $(document).ready(function () {
             				}
             				
             			});  
-                $('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-                emailError = false;
+             /*    $('.emailCode').siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
+                emailError = false; */
    
          	
         	
@@ -291,19 +292,23 @@ $(document).ready(function () {
 			    
  		// email 본인인증
  		if($(this).hasClass('emailCode')) {
-
- 			if(emailError==false)
- 			console.log("인증번호: "+randomCode);
-	 		if ($(this).val()==randomCode) {
-	 			  $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
-	 	           emailCodeError = false;
-	 		}else {
-	 			  
-	               $(this).siblings('span.error').text('인증번호를 정확하게 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
+	 		if($('.email').val().length>0 && emailError==false && emailcheck==1){
+	 			console.log("인증번호: "+randomCode);
+			 	if ($(this).val()==randomCode) {
+			 		  $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
+			 	          emailCodeError = false;
+			 	}else {
+			 		  
+			        $(this).siblings('span.error').text('인증번호를 정확하게 입력하세요.').fadeIn().parent('.form-group').addClass('hasError');
+			          emailCodeError = true;
+			 		}
+	 			
+			} else {
+	               $(this).siblings('span.error').text('이메일 본인인증을 해주세요.').fadeIn().parent('.form-group').addClass('hasError');
 	               emailCodeError = true;
-	 		}
+			}
  		}
-		   
+ 		
  
 
         // Birth
@@ -505,7 +510,7 @@ $(document).ready(function () {
  // Form submit
      $('form.signup-form').submit(function (event) {
     	 
-    	 $('.id, .email, .emailCode, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
+    	 $('.id, .name, .email, .emailCode, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
         
         
     var ErrorArray =
@@ -535,7 +540,7 @@ $(document).ready(function () {
         	   event.preventDefault();
           console.log(error);
           
-          $('.id, .email, .emailCode, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
+          $('.id, .name, .email, .emailCode, .pass, .passConfirm, .phone3, .bir_yy, .bir_dd, .typeTable').blur();
 
             
          }
