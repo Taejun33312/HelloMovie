@@ -12,6 +12,15 @@
 <link rel="stylesheet" type="text/css" href="./css/screen.css"/>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 	
+<style type="text/css">
+
+li{
+	font: caption;
+	font-weight: bold;
+
+}
+</style>
+	
 </head>
 <body class="post-template page-template page">
 <div class="site-wrapper">

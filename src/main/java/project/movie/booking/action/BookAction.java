@@ -48,7 +48,7 @@ public class BookAction implements Action {
 		}
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("./MyTicket.me");
+		forward.setPath("./MyPage.me");
 		forward.setRedirect(true);
 
 		return forward;

@@ -76,7 +76,8 @@ body {
 	height: 770px;
 	overflow: scroll;
 	overflow-x: hidden;
-	
+	font-size: 15px;
+	font-weight: bold;
 }
 
 .movie-date-wrapper {
@@ -132,13 +133,13 @@ body {
 	flex-direction: column;
 }
 
-/* .theater-place-wrapper {
+.theater-place-wrapper {
      padding: 6px 5px;
     height: 40px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     text-align: left;
-} */
+}
 [type="radio"] {
 	vertical-align: middle;
 	appearance: none;
@@ -195,14 +196,17 @@ body {
 .theater-movie {
 	padding: 6px 5px;
 	height: 40px;
-	font-size: 12px;
+	font-size: 15px;
 	font-weight: bold;
 	text-align: left;
 }
 
 .reserve-time {
-	width: 300px;
-	margin: 0 auto;
+	padding: 6px 5px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
 }
 
 .reserve-where {

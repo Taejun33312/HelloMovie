@@ -12,7 +12,7 @@
 	input {
 	    padding: 6px 5px;
     height: 40px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     text-align: left;
 }    
