@@ -20,11 +20,15 @@
     flex-direction: column;
     align-items: center;
     background: #fff;
-    margin: 40px;
-	width: 60%;
-    text-align: center;
-    
-
+	width: 40%;
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+ 
+}
+.membercard h2 {
+display: inline;
 }
 
 .text{
@@ -61,15 +65,6 @@
   cursor: pointer;
 }
 
-/* .bo {
-	margin: 20px;
-	width: 60%;
-	display: inline-flex;
-	align-items: center;
-    text-align: center;
-	
-} */
-
 
 </style>
 </head>
@@ -83,7 +78,7 @@
 			<h1 class="post-title">My page</h1>
 				<div class="author-meta">
 					<span class=""><a href="MemberUpdate.me">회원정보 수정</a></span>
-					<span><a href="MyTicketInfo.bk?Mem_num=${dto.mem_num }">예매확인</a></span> 
+					<span><a href="MyTicketInfo.bk?Mem_num=${dto.mem_num }">예매내역</a></span> 
 					<span class=""><a href="Bonus.me">등급확인</a></span>
 					<span class=""><a href="">결제내역</a></span>
 					<span class=""><a href="">1:1 문의내역</a></span>
@@ -107,13 +102,12 @@
 		<!-- 프로필 -->
 	
 		<!-- totalList 순서 : bdto, mvdto, scdto, tdto -->
-		<div class="ticket" >
-		
+		<div class="membercard">
 			<!-- 예매 내역 없을 경우 -->
 		    <c:if test="${empty totalList }">
 				<h3>최근 예매 내역이 없습니다.</h3>
 				<div class="btn-area">
-					<button id="btn" type="submit" onclick="#">예매 바로가기</button>
+					<button id="btn" type="submit" onclick="location.href='./Booking.bk';">예매 바로가기</button>
 				</div>
 			</c:if>
 		</div>	
@@ -122,14 +116,16 @@
 			
 				<div class="membercard">
 				<!-- 조회일 기준으로 예매 내역 출력 -->
-					예매번호: ${s[0].b_booking_num}
-					<h2> ${s[1].m_name } </h2>
-					${s[2].sc_name } <br>
-					${s[3].t_date } <br>
-					${s[3].t_startTime } <br>
-					좌석 번호 : ${s[0].s_num} <br>
-					청소년 : ${s[0].youth_num}명 /
-					성인 : ${s[0].adult_num}명
+					<img class="logo" src="assets/img/logo2.png" width="120px" >
+					
+						예매번호: ${s[0].b_booking_num} <br>
+						<h4> ${s[1].m_name } </h4>
+						${s[3].t_date }
+						${s[3].t_startTime } 
+						${s[2].sc_name } <br>
+						좌석 번호 : ${s[0].s_num} <br>
+						청소년 : ${s[0].youth_num}명 /
+						성인 : ${s[0].adult_num}명-->
 				</div>
 
 			</c:forEach>

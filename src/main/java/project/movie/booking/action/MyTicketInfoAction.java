@@ -1,12 +1,13 @@
 package project.movie.booking.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import project.movie.booking.db.BookingDAO;
+import project.moive.booking.db.BookingDAO;
 
 public class MyTicketInfoAction implements Action {
 
@@ -30,11 +31,11 @@ public class MyTicketInfoAction implements Action {
 		
 		BookingDAO bdao = new BookingDAO();
 		
-		List ticketList = bdao.myTicketInfo(Mem_num);
+		List totalList = bdao.myTicketInfo(Mem_num);
 		
-		request.setAttribute("ticketList", ticketList);
+		request.setAttribute("totalList", totalList);
 		
-		System.out.println(ticketList);
+		System.out.println(totalList);
 
 		forward.setPath("./booking/myTicket.jsp");
 		forward.setRedirect(false); 
