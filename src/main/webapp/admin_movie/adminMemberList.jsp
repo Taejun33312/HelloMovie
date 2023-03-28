@@ -31,7 +31,6 @@
 	</header>
 	</body>
 	<main class="content" role="main">
-	<form action="./AdminPage.mm" method="post">	
 	<input type ="hidden" name="Mem_num" value="${dto.mem_num }">
 
 	<table>
@@ -74,13 +73,28 @@
 	    </c:forEach>
 	    
 	</table>
-		
-		
-
-			<input type="submit" value="돌아가기">
-		</form>
-		<jsp:include page="../inc/footer.jsp"/>
+<div id="page_control" style="text-align: center;">
+	    <c:if test="${startPage > pageBlock }">
+			<a href="./AdminMemberInfo.mm?pageNum=${startPage-pageBlock }&search=${search}">이전</a>
+		</c:if>
+	<c:choose>
+	<c:when test="${search eq null }">
+		<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
+			<a href="./AdminMemberInfo.mm?pageNum=${i }&search=${search}">${i }</a>
+		</c:forEach>
+	</c:when>
+	<c:otherwise>
+		<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
+			<a href="./AdminMemberInfo.mm?pageNum=${i }&search=${search}">${i }</a>
+		</c:forEach>
+	</c:otherwise>
+	</c:choose>
+		<c:if test="${endPage < pageCount }">
+			<a href="./AdminMemberInfo.mm?pageNum=${startPage+pageBlock }&search=${search}">다음</a>
+		</c:if>
+	</div>
 	</main>
+		<jsp:include page="../inc/footer.jsp"/>
 
 		
 </html>
