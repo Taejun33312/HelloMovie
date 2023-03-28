@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>로그인</title>    
+<title>Hello Movie</title>    
 <link rel="stylesheet" href="./css/login.css">
 
 <script src="../lib/jquery-3.6.0.min.js"></script>
