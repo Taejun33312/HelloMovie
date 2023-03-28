@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>Hello Movie</title>
+<title>Nectaria - Free HTML Template by WowThemes.net</title>
 <style>
 /* Form */
 
@@ -25,16 +25,28 @@
 .question .button a{color:#fff;}
 
 .btn1{
-   margin-right: 150px;
-  position: relative;
-  border: 0;
-  padding: 15px 25px;
-  display: inline-block;
-  text-align: center;
-  color: black;
+    border-radius: 5px;
+    margin-right: 30%;
+    margin-top: 30px;
+    color: black;
+    line-height: 30px;
+    border: 2px solid lightgrey !important;
+    background: #f4f4f4;
 }
+
+.btn2{
+    border-radius: 5px;
+    margin-right: 30%;
+    margin-top: 30px;
+    color: black;
+    line-height: 30px;
+    border: 2px solid lightgrey !important;
+    background: #f4f4f4;
+}
+
+
 .body1{
-background-color: white;
+background-color: white; 
 }
 #notice{
   height: 500px;
@@ -85,8 +97,8 @@ background-color: white;
        </td>
 	  </tr>
     </table>
-        <input type="submit" value="수정하기" class="btn1" style="float: right";>       
-        <input type="button" value="돌아가기" class="btn1" style="float: right"; onclick="location.href ='./NoticeListAction.no';">       
+    <input type="submit" value="수정하기" class="btn1" style="float: right";>     
+     <input type="button" value="목록" class="btn2" style="float: right"; onclick="location.href ='./NoticeListAction.no';">       
   </form>
 <!-- //Form -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

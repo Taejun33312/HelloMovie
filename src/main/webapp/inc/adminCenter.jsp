@@ -10,6 +10,8 @@
 		<span class=""><a href="./AdminMemberInfo.mm">회원목록</a></span>
 				<span class=""><a href="./NoticeListAction.no">공지사항</a></span>
 		<span class=""><a href="./QnaListAction.qa">1:1 문의내역</a></span>
+		<span class="">	<a href="saveDB.mv">영화 DB저장</a></span>
+		<span class=""><a href="timeInsert.mv">영화 상영 등록</a></span>
 	</div>
 		</div>
 	</div>

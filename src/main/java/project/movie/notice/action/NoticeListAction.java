@@ -18,14 +18,16 @@ public class NoticeListAction implements Action{
 		
 		System.out.println(" M : NoticeListAction_execute() 호출 ");
 
+		String search = request.getParameter("search") == null ? "" : request.getParameter("search");
+		
 		// NoticeDAO 객체 생성
 		NoticeDAO dao = new NoticeDAO();
 		// 게시판 전체글 개수
-		int cnt = dao.getNoticeCount();
+		int cnt = dao.getNoticeCount(search);
 
 		// 페이징 처리 1 - DB에서 원하는 만큼의 글을 가져오기/////////////
 		// 한페이지에 출력할 글의 개수
-		int pageSize = 5;
+		int pageSize = 7;
 
 		// 현페이지가 몇페이지 인가 판단
 		String pageNum = request.getParameter("pageNum");
@@ -36,7 +38,7 @@ public class NoticeListAction implements Action{
 		int startRow = (currentPage - 1) * pageSize + 1;
 		int endRow = currentPage * pageSize;
 
-		List noticeList = dao.getNoticeListPage(startRow, pageSize);
+		List noticeList = dao.searchNoticeList(search,startRow,pageSize);
 
 		int pageCount = cnt / pageSize + (cnt % pageSize == 0 ? 0 : 1);
 
@@ -53,6 +55,7 @@ public class NoticeListAction implements Action{
 
 	     // 전달할 정보를 request 영역에 저장(글정보 + 페이징처리정보)
 	      request.setAttribute("noticeList", noticeList);
+	      request.setAttribute("search", search);
 	      request.setAttribute("pageNum", pageNum);
 	      request.setAttribute("cnt", cnt);
 	      request.setAttribute("pageCount", pageCount);
@@ -61,6 +64,7 @@ public class NoticeListAction implements Action{
 	      request.setAttribute("endPage", endPage);
 	
 	      // 페이지 이동
+	      
 	      ActionForward forward = new ActionForward();
 	      forward.setPath("./notice/noticeList.jsp");
 	      forward.setRedirect(false);
