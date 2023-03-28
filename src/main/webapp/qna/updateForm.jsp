@@ -25,14 +25,25 @@
 .question .button a{color:#fff;}
 
 .btn1{
-   margin-right: 150px;
-  position: relative;
-  border: 0;
-  padding: 15px 25px;
-  display: inline-block;
-  text-align: center;
-  color: black;
+  border-radius: 5px;
+    margin-right: 30%;
+    margin-top: 30px;
+    color: black;
+    line-height: 30px;
+    border: 2px solid lightgrey !important;
+    background: #f4f4f4;
 }
+
+.btn2{
+  border-radius: 5px;
+    margin-right: 30%;
+    margin-top: 30px;
+    color: black;
+    line-height: 30px;
+    border: 2px solid lightgrey !important;
+    background: #f4f4f4;
+}
+
 .body1{
 background-color: white;
 }
@@ -57,7 +68,7 @@ background-color: white;
 <form action="./QnaUpdateActionPro.qa?Q_num=${dto.q_num }&pageNum=${pageNum}" method="post">
 <input type="hidden" value="${dto.mem_id }" name="Mem_id">
  <table class="question" id="notice">
-  <caption class="qtit"><h2>문의사항</h2></caption> 	 
+  <caption class="qtit"><h1>문의사항</h1></caption> 	 
   <tr>
    <td style="background: white;">글번호</td>
    <td style="background: white;"> ${dto.q_num }</td>
@@ -86,7 +97,7 @@ background-color: white;
 	  </tr>
     </table>
         <input type="submit" value="수정하기" class="btn1" style="float: right";>       
-        <input type="button" value="돌아가기" class="btn1" style="float: right"; onclick="location.href ='./QnaListAction.qa';">       
+        <input type="button" value="목록" class="btn2" style="float: right";  onclick="location.href ='./QnaListAction.qa';">       
   </form>
 <!-- //Form -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -94,4 +105,7 @@ background-color: white;
 <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="assets/js/index.js"></script>
 </body>
+
+
+
 </html>

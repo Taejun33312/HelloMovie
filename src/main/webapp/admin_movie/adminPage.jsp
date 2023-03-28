@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>Hello Movie</title>
+<title>My Page</title>
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
@@ -25,6 +25,8 @@
 		<span class=""><a href="./AdminMemberInfo.mm">회원목록</a></span>
 				<span class=""><a href="./NoticeListAction.no">공지사항</a></span>
 		<span class=""><a href="./QnaListAction.qa">1:1 문의내역</a></span>
+		<span class="">	<a href="saveDB.mv">영화 DB저장</a></span>
+		<span class=""><a href="timeInsert.mv">영화 상영 등록</a></span>
 	</div>
 		</div>
 	</div>

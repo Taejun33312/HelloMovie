@@ -18,7 +18,7 @@ h1{
 }
 
 body{
- width: 800px; margin-top: 200px; margin-left: 300px;
+ width: 800px; margin-top: 200px; margin-left: 30%;
  background-color: white;
 }
 .btn{

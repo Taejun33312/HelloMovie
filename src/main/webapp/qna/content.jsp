@@ -18,7 +18,7 @@ h1{
 }
 
 body{
- width: 800px; margin-top: 200px; margin-left: 300px;
+ width: 800px; margin-top: 200px; margin-left: 28%;
  background-color: white;
 }
 .btn{
@@ -57,7 +57,7 @@ border: none;
    
    <tr>
    <!--   <th>제목</th> -->
-     <td colspan="3">${dto.mem_subject }</td>
+     <td colspan="3" style="font-weight: bold;">${dto.mem_subject }</td>
    <td>${dto.q_date }</td>
     </tr>
 

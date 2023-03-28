@@ -5,11 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>Hello Movie</title>
+<title>Nectaria - Free HTML Template by WowThemes.net</title>
 <style>
 /* Form */
 
-.question{width:80%; border-top:5px solid #bdbdbd; border-bottom:5px solid #bdbdbd;font-family:"NanumGothic",sans-serif;}
+h2{
+text-align: left !important;
+color: black !important;
+}
+
+.site-wrapper{
+ background-color: white !important;
+}
+
+#content{
+padding: 10px !important;
+}
+
+.question{width:60%; border-top:5px solid #bdbdbd; border-bottom:5px solid #bdbdbd;font-family:"NanumGothic",sans-serif; margin: auto !important;}
 .question .qtit{text-align:left; margin:100px 0 50px 0;}
 .question tr{border-top:1px solid #cdcdcd;}
 .question tr:first-child{border-top:0;}
@@ -20,17 +33,31 @@
 .question select{padding:0.9%;}
 .question textarea{vertical-align:middle;border:1px solid #cdcdcd; width:94%; height:100px;background:#white;padding:1%}
 .question label{margin-right:1%;}
-.question .button{margin-right:15%;  line-height:12px;font-size:14px;font-family:"NanumGothic",sans-serif;background:#white;vertical-align:middle;border:1px solid #5e5e5e;padding:1%; cursor:pointer;}
-.question .button a{color:#fff;}
 .question .add{margin-top:1%;}
 .question .wid10{width:20%;}
 .question .wid20{width:50%;}
 .question .wid30{width:80%;height: 300px;}
 
+.btngreen{
+    border-radius: 5px;
+    margin-right: 20%;
+    margin-top: 20px;
+    color: black;
+    line-height: 30px;
+    border: 2px solid lightgrey !important;
+    background: #f4f4f4;
+    
+    
+}
+.btngreen1{
+    border-radius: 5px;
+    color: black;
+    line-height: 30px;
+    border: 2px solid lightgrey !important;
+    background: #f4f4f4;
+    
+}
 
-.btngreen{margin-top:30px; text-align: right; margin-right: 250px}
-.btngreen a{width:8%;margin:0 auto;display:block;padding:0.7em 1.5em 0.8em 1.5em;font-size:16px;color:#fff;border:1px solid #008d2d;border-radius:2em;background:#008d2d; text-align:center;letter-spacing:-0.5px; font-weight:bold;}
-.btngreen a:hover{background:#fff;color:#008d2d;}
 </style>
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -68,19 +95,19 @@
             </td>
         </tr>
         <tr>
-            <th class="th" scope="row">공지사항</th>
+            <th class="th" scope="row">내용</th>
             <td>
                 <textarea title="공지사항" class="wid30"  placeholder="1000자 이내(2000byte)로 입력해 주세요" name="No_content"></textarea>
             </td>
         </tr>
   </table>
       
-      <div class="btngreen">
-         <p> <input type="submit" class="Btn" value="등록하기"></p>
+      
+         <p align="right"> <input type="submit" class="btngreen" value="등록하기"></p>
          	
-      </div>
+   
          </form>  
-         <p> <input type="button" class="Btn" value="돌아가기" onclick="./NoticeListAction.no';"></p>
+         <p align="center"> <input type="button" class="btngreen1" value="목록" onclick="location.href='./NoticeListAction.no';"></p>
 <!-- //Form -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="assets/js/masonry.min.js"></script>

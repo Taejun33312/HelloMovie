@@ -20,7 +20,7 @@ public class NoticeSearchAction implements Action {
 		
 		NoticeDAO dao = new NoticeDAO();
 		
-		int cnt = dao.getNoticeCount();
+		int cnt = dao.getNoticeCount(search);
 		
 		int pageSize=5;
 		
@@ -48,6 +48,7 @@ public class NoticeSearchAction implements Action {
 		request.setAttribute("noticeList", searchList);
 		System.out.println(searchList);
 		
+		request.setAttribute("search", search);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("cnt", cnt);
 		request.setAttribute("pageCount", pageCount);

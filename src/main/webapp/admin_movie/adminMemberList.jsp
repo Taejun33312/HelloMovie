@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>Hello Movie</title>
+<title>회원정보</title>
 <style type="text/css">
 
 	
@@ -31,7 +31,7 @@
 	</header>
 	</body>
 	<main class="content" role="main">
-		
+	<form action="./AdminPage.mm" method="post">	
 	<input type ="hidden" name="Mem_num" value="${dto.mem_num }">
 
 	<table>
@@ -67,40 +67,20 @@
 <%-- 				<td class="left">${dto.mem_rCount }</td>
  --%>				
 				<td>
-				<a href="./AdMemInfoUpdate.mm?Mem_num=${dto.mem_num}"  class="btn-gradient red mini">수정</a>
-				<a href="./AdMemInfodelete.mm?Mem_num=${dto.mem_num}" class="btn-gradient red mini">삭제</a></td>
+				<a href="./MemberUpdate.me"  class="btn-gradient red mini">수정</a>
+				<a href="./Delete.me" class="btn-gradient red mini">삭제</a></td>
 		   
 		    </tr>
 	    </c:forEach>
 	    
 	</table>
-	
 		
 		
-	<div style="text-align: center; font-size: 20px;">
-	<c:if test="${startPage > pageBlock }">
-			<a href="./AdminMemberInfo.mm?pageNum=${startPage-pageBlock }">Prev</a>
-		</c:if>
-		
-		<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
-			<a href="./AdminMemberInfo.mm?pageNum=${i }">${i }</a>
-		</c:forEach>
-		
-		<c:if test="${endPage < pageCount }">
-			<a href="./AdminMemberInfo.mm?pageNum=${startPage+pageBlock }">Next</a>
-		</c:if>
-		</div>
 
-			
-	</main>
-		
-		<!-- <form action="./AdminPage.mm" method="post">
-		
-			<input class="btn-gradient red mini" style="width: 150px; height: 50px;" type="submit" value="돌아가기">
-			
-		</form> -->
-		
+			<input type="submit" value="돌아가기">
+		</form>
 		<jsp:include page="../inc/footer.jsp"/>
-		
+	</main>
+
 		
 </html>

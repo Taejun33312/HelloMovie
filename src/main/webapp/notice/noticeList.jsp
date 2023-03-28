@@ -6,28 +6,65 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Hello Movie</title>
+<title>Insert title here</title>
 
 <link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 
 <style type="text/css">
 
-.btn{
-color: black; 
+hr{
+ border: 2px thin #BDBDBD !important;
 }
 
-h1{
+.btn11{
+    border-radius: 5px;
+    margin-top:5%;
+    margin-right: -150px;
+    color: black;
+    line-height: 30px;
+    border: 1px solid lightgrey !important;
+    background: #f4f4f4;
+    
+}
+.btn22{
+    border-radius: 5px;
+    margin-right: 15px;
+    color: black;
+    line-height: 40px;
+    border: 1px solid lightgrey !important;
+    background: #f4f4f4;
+    padding: 3px;
+}
+
+#btn33{
+    margin-left: 3px;
+    /* color: #fff; */
+    /* line-height: 30px; */
+    border: 1px solid #c4c4c4;
+    background: #f4f4f4;
+    padding: 2px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btngreen{
+  margin-top: 20px;
+}
+h2{
   text-align: left; margin-left: 50px; color: black;
+  margin-top: 12%;
 }
 
-
+ .site-footer {
+ 	position: absolute;
+ }
 
     body{
     margin:auto;
-    width: 800px;
+    width: auto;
     background-color: white;
-        line-height:2em;        
+        line-height:3em;        
         font-family:"맑은 고딕";
 }
     ul, li{ 
@@ -40,7 +77,7 @@ h1{
 
     #mainWrapper{
         width: 1000px;
-        margin: 200px auto; /*가운데 정렬*/
+        margin-left:24%; /*가운데 정렬*/
         
         
     }
@@ -70,7 +107,7 @@ h1{
 }
     #ulTable > li > ul > li { 
         float:left;
-        font-size:10pt;
+        font-size:1.8rem;
         border-bottom:1px solid silver;
         vertical-align:baseline;
 }    
@@ -79,6 +116,7 @@ h1{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-right: 5px;
   
 
 }
@@ -106,43 +144,185 @@ h1{
 
 }
 
+
+
     .left {
         text-align : left;
         
 }
 #table_search{
-  margin-right: 100px;
+  margin-right:16%;
 }
 #recent{
  border: thick; color: green;
 }
+#page_control{
+   margin-bottom: 30px;
+}
+
+html{
+	    max-height: 0%;
+}
 
 </style>
 
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+	$('#menu > li').mouseover(function() {
+		var menu_i = $(this).index();
+		console.log("@@@@@" + menu_i);
+
+		if (menu_i == 2) {
+			$('.menu_pan').css({
+				display : 'none'
+			}).eq($(this).index() - 3).css({
+				display : 'block'
+			});
+		} else {
+			// 추가된 코드
+			$('.menu_pan').css({
+				display : 'none'
+			});
+		}
+	});
+
+	$('#menu').mouseleave(function() {
+		$('.menu_pan').css({
+			display : 'none'
+		});
+	});
+
+	$('.menu_pan').mouseover(function() {
+		$('.menu_pan').eq($(this).index() - 3).css({
+			display : 'block'
+		});
+	});
+
+	$('.menu_pan').mouseleave(function() {
+		$('.menu_pan').eq($(this).index() - 3).css({
+			display : 'none'
+		});
+	});
+});
+</script>
+
+
+
 </head>
 <body>
-	<div class="main-nav overlay clearfix">
-	<jsp:include page="../inc/top.jsp"/>
+
+<!-- header  -->
+	<nav class="main-nav overlay clearfix">
+	<a class="blog-logo" href="./Main.mm"><img style="width: 70px;" src="./img/logo.png" alt="Fashion Critiques"/></a>
+	<ul id="menu">	
+		<li class="nav-home nav-current"><a href="movieList.mv">영화</a></li>
+		<li class="nav-article-example"><a href="Booking.bk">예매</a></li>
+		<li class="nav-about-us" ><a href="#">극장</a></li>
+		<li class="nav-author-page" role="presentation"><a href="Bonus.me">혜택</a></li>
+		
+	<span class="socialheader">
+	<c:if test="${id == null }">
+		<li><a href="Login.me">로그인</a></li>
+		<li><a href="Join.me">회원가입</a></li>
+	</c:if>
+
+  	<c:if test="${id != null }">  
+  		<%-- <li><a>	${dto.mem_name }님 </a></li> --%>
+		<li><a href="MyPage.me">마이페이지</a></li>
+		<li><a href="LogoutAction.me">로그아웃</a></li>
+	</c:if>
+	
+	<c:if test="${id != null && id.equals('admin') }">
+		<li><a href="./AdminPage.mm">관리자</a></li>
+	</c:if>
+
+	</span>
+	</ul>
+	
+	<div class="menu_pan">
+		<div class="sub_menu">
+			<div class="screen_zone">
+				<a>서울</a>
+				<div>
+					<a href="./Screen.sc?Sc_num=02_1" title="강남">강남점</a>
+				</div>
+				<div>
+					<a href="./Screen.sc?Sc_num=02_2" title="명동">명동점</a>
+				</div>
+			</div>
 		</div>
+
+		<div class="sub_menu">
+			<div class="screen_zone">
+				<a>대구</a>
+				<div>
+					<a href="./Screen.sc?Sc_num=053_1" title="대구수성">수성점</a>
+				</div>
+				<div>
+					<a href="./Screen.sc?Sc_num=053_2" title="대구현대">현대점</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="sub_menu">
+			<div class="screen_zone">
+				<a>대전</a>
+				<div>
+					<a href="./Screen.sc?Sc_num=042_1" title="대전탄방">탄방점</a>
+				</div>
+				<div>
+					<a href="./Screen.sc?Sc_num=042_2" title="대전가오">가오점</a>
+				</div>
+			</div>
+		</div>
+		<div class="sub_menu">
+			<div class="screen_zone">
+				<a>부산</a>
+				<div>
+					<a href="./Screen.sc?Sc_num=051_1" title="부산서면">서면점</a>
+				</div>
+				<div>
+					<a href="./Screen.sc?Sc_num=051_2" title="부산해운대">해운대점</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="sub_menu">
+			<div class="screen_zone">
+				<a>광주</a>
+				<div>
+					<a href="./Screen.sc?Sc_num=062_1" title="대구수성">광주점</a>
+				</div>
+				<div>
+					<a href="./Screen.sc?Sc_num=062_2" title="대구현대">용봉점</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</nav>
+
+<!-- header  -->
 
 
 <div id="mainWrapper">
 <%-- <jsp:include page="../inc/adminCenter.jsp"/> --%>
- <ul>
- <h1>공지사항</h1> 	 
-  <hr>
-  
-  
 
+<ul>
+ <h2>공지사항</h2>
   <li>
-
  	<div align= "right" id="table_search">
 	  <form action="./NoticeSearchAction.no" method="post">
 		<input type="text" name="search" class="input_box" >
-		<input type="submit" value="검색" class="btn">
+		<input type="submit" value="검색" class="btn11">
 	  </form>
 	</div>
-  
+  </li>
+  </ul>
 	<ul id="ulTable">
 		<li>
 		  <ul>
@@ -152,13 +332,12 @@ h1{
 		<!--     <li>등록일</li> -->
 		  </ul> 
 		</li>
-		
-		
+
 		<c:forEach var="dto" items="${noticeList }">    
 			<li>
 			  <ul>
 			<%-- 	<li>${dto.no_num }</li> --%>
-				<li class="left"  style=" width: 650px">
+				<li class="left"  style=" width: 750px">
 					<a href="./NoticeContentAction.no?No_num=${dto.no_num }&pageNum=${pageNum}" style="text-decoration: none;">${dto.no_title }</a>
 				</li>				
 			   <%--  <li>${dto.mem_id }</li>   --%>
@@ -169,8 +348,8 @@ h1{
 		  	  if(id != null){
 		  	  if(id.equals("admin")){
   	%>
-	       <li><a href="./NoticeUpdateAction.no?No_num=${dto.no_num }&pageNum=${pageNum} " style="text-decoration: none;" id="btn-5">수정</a>
-	          <a href="./NoticeDeleteAction.no?No_num=${dto.no_num }&pageNum=${pageNum}" style="text-decoration: none;" >삭제</a></li>
+	       <li><a href="./NoticeUpdateAction.no?No_num=${dto.no_num }&pageNum=${pageNum} " style="text-decoration: none;" id="btn33">수정</a>
+	          <a href="./NoticeDeleteAction.no?No_num=${dto.no_num }&pageNum=${pageNum}" style="text-decoration: none;" id="btn33">삭제</a></li>
   	<%
   	 		 	}
   			  }
@@ -187,37 +366,35 @@ h1{
 		  	  if(id.equals("admin")){
   	%>
 	  <div align="right" class="btngreen">
-          <a href="./NoticeWrite.no" class="btn" value="글쓰기">글쓰기</a>
+          <a href="./NoticeWrite.no" class="btn22" value="글쓰기">글쓰기</a>
       </div>
 		<%
   	 		 	}
   			  }
   	%> 
-		
 	<div id="page_control">
-	
 	    <c:if test="${startPage > pageBlock }">
-			<a href="./NoticeListAction.no?pageNum=${startPage-pageBlock }">Prev</a>
+			<a href="./NoticeListAction.no?pageNum=${startPage-pageBlock }&search=${search}">이전</a>
 		</c:if>
-		
+	<c:choose>
+	<c:when test="${search eq null }">
 		<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
-			<a href="./NoticeListAction.no?pageNum=${i }">${i }</a>
+			<a href="./NoticeListAction.no?pageNum=${i }&search=${search}">${i }</a>
 		</c:forEach>
-		
+	</c:when>
+	<c:otherwise>
+		<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
+			<a href="./NoticeListAction.no?pageNum=${i }&search=${search}">${i }</a>
+		</c:forEach>
+	</c:otherwise>
+	</c:choose>
 		<c:if test="${endPage < pageCount }">
-			<a href="./NoticeListAction.no?pageNum=${startPage+pageBlock }">Next</a>
+			<a href="./NoticeListAction.no?pageNum=${startPage+pageBlock }&search=${search}">다음</a>
 		</c:if>
 	</div>
 	</ul>
-</article>
-
-<!-- 푸터들어가는 곳 -->
-<footer>
-<hr>
+</div>
+</body>
 
 <jsp:include page="../inc/footer.jsp"/>
-</footer>
-<!-- 푸터들어가는 곳 -->
-
-</body>
 </html>

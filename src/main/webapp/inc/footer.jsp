@@ -12,3 +12,4 @@
 			All rights reserved
 	</div>
 	</footer>
+	</html>

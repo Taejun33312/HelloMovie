@@ -8,7 +8,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello Movie</title>
+<title>로그인</title>
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" href="./css/login.css">
@@ -32,7 +32,7 @@ integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7g
    <div class="panel border bg-white">
   	<h1>안영화세요</h1>
 <!--     <img src="assets/img/logo2.png" width="150px" >  -->
-        <form action="./LoginAction.me" method="post">
+        <form action="./LoginAction.me?" method="post">
         <input type="hidden" name="referer" value="${referer }">
         <input type="hidden" name="Mem_num" id="Mem_num">
         <input type="hidden" name="name" >
@@ -151,6 +151,7 @@ Kakao.init('7b8ba339d869370b95d680c83b575837'); //발급받은 키 중 javascrip
 	</script>
 <!-- 카카오 로그인 스크립트 끝 -->
 </body>
+
 <footer class="site-footer clearfix" style="position: absolute;">
 	<a href="#top" id="back-to-top" class="back-top"></a>
 	<div class="text-center">

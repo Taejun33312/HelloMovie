@@ -89,7 +89,6 @@ public class NoticeDAO {
 
 				// 4. SQL 실행
 				pstmt.executeUpdate();
-				System.out.println(" DAO : 글쓰기 완료! ");
 	
 				rs.close();
 				pstmt.close();
@@ -123,7 +122,6 @@ public class NoticeDAO {
 
 				} // while
 
-				System.out.println(" DAO : 게시판 글정보 모두 저장완료 ");
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -162,7 +160,6 @@ public class NoticeDAO {
 
 				} // while
 
-				System.out.println(" DAO : 공지사항 글정보 모두 저장완료 ");
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -190,28 +187,29 @@ public class NoticeDAO {
 		 * 
 		 * @return 글 전체 개수
 		 */
-		public int getNoticeCount() {
+		public int getNoticeCount(String search) {
 			int cnt = 0;
 			try {
 				// 1.드라이버로드
 				// 2.디비연결
 				con = getCon();
 				// 3. sql 작성 & pstmt 객체
-				sql = "select count(*) from notice";
+				sql = "select count(*) from notice "
+						+ " where No_title like ?";
 				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setString(1, "%"+search+"%");
 				// 4. sql 실행
 				rs = pstmt.executeQuery();
 				// 5. 데이터처리
 				if (rs.next()) {
 					cnt = rs.getInt(1);
 				}
-				System.out.println(" DAO : 글 전체 개수 :" + cnt);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
 				closeDB();
 			}
-
 			return cnt;
 		}
 		// 글 전체 개수 조회
@@ -244,7 +242,6 @@ public class NoticeDAO {
 							
 				}
 				
-				System.out.println(" DAO : 글정보 저장완료! ");
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -274,7 +271,6 @@ public class NoticeDAO {
 				
 				pstmt.executeUpdate();
 				
-			  System.out.println(" 수정 ooo");
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -296,7 +292,6 @@ public class NoticeDAO {
 				pstmt.setInt(1, No_num);
 				
 				result=pstmt.executeUpdate();
-				System.out.println(" DAO : 글 삭제 완료! ");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally {
@@ -317,12 +312,12 @@ public class NoticeDAO {
 				//  페이징처리 limit 사이즈만큼 처리
 				
 				sql = "select * from notice "
-						+ " where No_title like ?";
+						+ " where No_title like ?"+"order by no_date desc"+" limit ?,?";
 				pstmt = con.prepareStatement(sql);
 				
 				pstmt.setString(1, "%"+search+"%");
-//				pstmt.setInt(2, startRow-1);
-//				pstmt.setInt(3, pageSize);
+				pstmt.setInt(2, startRow-1);
+				pstmt.setInt(3, pageSize);
 				
 				// 4. sql 실행
 				rs = pstmt.executeQuery();
@@ -338,7 +333,6 @@ public class NoticeDAO {
 					searchList.add(dto);
 				
 				}
-				System.out.println(" DAO : 검색결과 저장완료! ");
 				
 			} catch (Exception e) {
 				e.printStackTrace();
