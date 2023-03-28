@@ -38,15 +38,17 @@
      </div>
  </section>  
  
-
-<%--  <!-- 푸터 시작 -->
-<jsp:include page="../inc/bottom.jsp" />
-<!-- 푸터 끝 --> --%>
 </div>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/masonry.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
+<!-- <footer class="site-footer clearfix" style="position: absolute;">
+	<a href="#top" id="back-to-top" class="back-top"></a>
+	<div class="text-center">
+		 	<a>안영화세요</a><br>
+		 	<a href="./NoticeListAction.no"><span class="notice1">공지사항</span></a>
+			 <a href="./QnaListAction.qa"><span class="notice1">고객센터</span></a><br>
+			 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+			All rights reserved
+	</div>
+	</footer> -->
+<jsp:include page="../inc/footer.jsp"/>
 </body>
 </html>

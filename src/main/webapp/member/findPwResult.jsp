@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>Hello Movie</title>    
+<title>로그인</title>    
 <link rel="stylesheet" href="./css/login.css">
 <script src="../lib/jquery-3.6.0.min.js"></script>
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
@@ -23,16 +23,15 @@
         <h1>비밀번호 찾기 완료</h1>
 		<p>회원님의 비밀번호는 다음과 같습니다.</p>
 
-		<form action="./findPwAction.me" method="post">
-	<%-- <input type="text" name="Mem_pw" id="Mem_pw" value="${dto.mem_pw}" readonly /> --%>
 			<h1>${dto.mem_pw}</h1>
 			<div class="btn-area">
+<!-- 						<input type="button"  onclick="location.href='./Login.me'" value="로그인 바로가기 "/> -->
 				<button id="btn" onclick="location.href='./Login.me'">로그인 바로가기</button>
+				
 			</div>
-		</form>
      </div>
  </section>
 </div>
-
+<jsp:include page="../inc/footer.jsp"/>
 </body>
 </html>

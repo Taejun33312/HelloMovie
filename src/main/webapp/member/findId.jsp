@@ -39,20 +39,10 @@
     </div>
  </section>  
  
-<footer class="site-footer clearfix">
-	<div class="text-center">
-		<a>안영화세요</a><br>Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-		All rights reserved 
-	</div>
-</footer>
-
 
 </div>
  
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/masonry.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
+<jsp:include page="../inc/footer.jsp"/>
 </body>
+
 </html>

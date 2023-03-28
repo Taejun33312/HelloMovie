@@ -17,7 +17,15 @@ public class BookingPageAction implements Action {
 		
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
+		
 		ActionForward forward = new ActionForward();
+//		if(id == null) {
+//			forward.setPath("./Login.me");
+//			forward.setRedirect(true);
+//			
+//			return forward;
+//		}
+	
 		// 영화 객체 정보/ 극장 객체 정보
 		MovieDAO movieDAO = new MovieDAO();
 		ScreenDAO screenDAO = new ScreenDAO();

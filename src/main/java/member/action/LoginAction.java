@@ -66,16 +66,15 @@ public class LoginAction implements Action {
 		ActionForward forward = new ActionForward();
 
 		if (referer != null) {
-			response.sendRedirect(referer);
-
-			return null;
-
-		} else {
-			forward.setPath("./Main.mm");
-			forward.setRedirect(true);
-			return forward;
+			if (referer.equals("http://localhost:8080/HelloMovie/Booking.bk")) {
+				response.sendRedirect("./Booking.bk");
+				return null;
+			} 
 		}
 
-	}
+		forward.setPath("./Main.mm");
+		forward.setRedirect(true);
 
+		return forward;
+	}
 }

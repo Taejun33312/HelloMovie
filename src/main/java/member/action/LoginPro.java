@@ -12,11 +12,11 @@ public class LoginPro implements Action {
 		String referer = request.getHeader("Referer");
 		System.out.println(referer);
 		
+		request.setAttribute("referer", referer);
 		ActionForward forward = new ActionForward();
 		forward.setPath("./member/loginForm.jsp");
 		forward.setRedirect(false); 
 		
-		request.setAttribute("referer", referer);
 		
 		return forward;
 	}

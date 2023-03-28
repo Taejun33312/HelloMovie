@@ -40,7 +40,7 @@ public class FindPwAction implements Action {
 			
 			out.print("<script>");
 			out.print(" alert('일치하는 정보가 없습니다.'); ");
-			out.print(" location.href='./findId.me'; ");
+			out.print(" history.back(); ");
 			out.print("</script>");
 			out.close();
 					

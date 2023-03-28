@@ -32,7 +32,7 @@ integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7g
    <div class="panel border bg-white">
   	<h1>안영화세요</h1>
 <!--     <img src="assets/img/logo2.png" width="150px" >  -->
-        <form action="./LoginAction.me?" method="post">
+        <form action="./LoginAction.me" method="post">
         <input type="hidden" name="referer" value="${referer }">
         <input type="hidden" name="Mem_num" id="Mem_num">
         <input type="hidden" name="name" >

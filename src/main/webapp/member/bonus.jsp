@@ -52,7 +52,9 @@
 		<c:if test="${not empty dto.mem_id}">
     	<h3 style="text-align: center;">${dto.mem_id} 님의 등급은 ${dto.mem_grade }입니다.</h3>
     	</c:if>
-
+		<c:if test="${empty dto.mem_id }">
+    	<h3 style="text-align: center;">로그인시 등급 조회 가능</h3>
+		</c:if>
     </caption>	
         <tr>
             <th class="th" scope="row"><img alt="BRONZE" src="./img/bornze.jpg" width="250px" height="180px"></th>

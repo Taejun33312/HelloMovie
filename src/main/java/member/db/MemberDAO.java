@@ -493,7 +493,6 @@ public class MemberDAO {
 	public MemberDTO findId(String Mem_name, String Mem_email) {
 
 		MemberDTO dto = null;
-
 		try {
 
 			con = getCon();
@@ -506,9 +505,9 @@ public class MemberDAO {
 			pstmt.setString(2, Mem_email);
 
 			rs = pstmt.executeQuery();
-
+			
 			if (rs.next()) {
-
+				System.out.println("d");
 				dto = new MemberDTO();
 				dto.setMem_id(rs.getString("Mem_id"));
 
@@ -534,7 +533,7 @@ public class MemberDAO {
 
 			con = getCon();
 
-			sql = "select * from member where Mem_name=? and Mem_id=?";
+			sql = "select Mem_pw from member where Mem_name=? and Mem_id=?";
 
 			pstmt = con.prepareStatement(sql);
 
@@ -542,7 +541,6 @@ public class MemberDAO {
 			pstmt.setString(2, Mem_id);
 
 			rs = pstmt.executeQuery();
-
 			if (rs.next()) {
 
 				dto = new MemberDTO();

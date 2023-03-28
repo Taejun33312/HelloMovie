@@ -47,7 +47,18 @@ href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic
 	</form>
 </section>
 
-	<jsp:include page="../inc/footer.jsp" />
+	
 
 </body>
+
+<footer class="site-footer clearfix" style="position: absolute;">
+	<a href="#top" id="back-to-top" class="back-top"></a>
+	<div class="text-center">
+		 	<a>안영화세요</a><br>
+		 	<a href="./NoticeListAction.no"><span class="notice1">공지사항</span></a>
+			 <a href="./QnaListAction.qa"><span class="notice1">고객센터</span></a><br>
+			 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+			All rights reserved
+	</div>
+	</footer>
 </html>
