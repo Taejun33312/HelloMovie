@@ -40,14 +40,11 @@
 	
 		<h2 style="color:white; margin-top:100px"><%=yesterday %> 기준</h2>
 		<h2 style="color:white;">일간 박스오피스</h2>
-		<a href="saveDB.mv">영화 DB저장</a>
-		<a href="timeInsert.mv">영화 상영 등록</a>
 		
 	</div>
 	
 	</header>
 	<main class="content1" role="main">
-	
 	
 	<c:if test="${not empty dailyList}">
 	
@@ -55,14 +52,11 @@
 	<c:set var="num" value="0"/>
 	<c:forEach begin="1" end="${dailyList.size() }" step="1">
 	
-	
 	<c:forEach begin="1" end="${dailyList.size() }" step="1" var="i">
 	<c:if test="${num<size }">
 	<c:set var="list" value="${dailyList[num] }"/>
 	<c:set var="img" value="${imgList[num] }"/>
 	
-	
- 	<!-- <div class="grid">  -->
 	 	<div class="grid-item1" style="height:550px; float:left"> 
 			<article class="post" style="float:left; width: 90%; margin:10px">
 			<div class="wrapgriditem" style=" height:430px;">
@@ -92,36 +86,21 @@
 				<c:out value="예매율 ${list.getM_reservationRate() }"/>%
 				<time class="post-date" datetime="2015-12-17"><c:out value="${list.getM_playDate() } 개봉"/></time><br>
 				
-				<%-- <input type="button" value="예매" onclick="location.href='./seatChoice.st?M_num=${list.getM_num() }&M_name=${list.getM_name() }'"> --%>
 				</footer>
 			</div>
 			</article>
 		</div> 
-	<!--  </div> -->
 
 	<c:set var="num" value="${num+1 }"/>
 	</c:if>
 	
 	</c:forEach>
-	
 
 	</c:forEach>
 	
-	
-	
 	</c:if>
-	
-	
-
-	
-
-	
 	</main>
 	<jsp:include page="../inc/footer.jsp"/>
 </div>
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-<!-- <script type="text/javascript" src="assets/js/masonry.min.js"></script> -->
-<!-- <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script> -->
-<!-- <script type="text/javascript" src="assets/js/index.js"></script> -->
 </body>
 </html>

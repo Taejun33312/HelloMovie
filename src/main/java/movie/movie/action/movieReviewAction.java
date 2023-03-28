@@ -37,10 +37,20 @@ public class movieReviewAction implements Action {
 		dto.setReview(Review);
 		dto.setM_grade(grade);
 		
-		int result = dao.movieReviewInsert(dto);
-		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		int result = dao.checkMovieSee(dto.getMem_num(), M_num);
+		if(result==-1) {
+			out.write("<script>");
+			out.write("alert('예매내역에 없는 영화 입니다.');");
+			out.write("history.back();");
+			out.write("</script>");
+			out.close();
+			return null;
+		}
+		
+		result = dao.movieReviewInsert(dto);
+
 		if(result==1) {
 			out.write("<script>");
 			out.write("alert('리뷰 등록 완료!');");
@@ -50,7 +60,7 @@ public class movieReviewAction implements Action {
 		}
 		if(result == 0) {
 			out.write("<script>");
-			out.write("alert('이미 등록하셨습니다');");
+			out.write("alert('이미 등록하셨습니다.');");
 			out.write("history.back();");
 			out.write("</script>");
 			out.close();

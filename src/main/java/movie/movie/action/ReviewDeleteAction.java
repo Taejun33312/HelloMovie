@@ -25,7 +25,6 @@ public class ReviewDeleteAction implements Action {
 		out.write("<script>");
 		out.write("alert('리뷰 삭제 완료!');");
 		out.write("history.back();");
-		out.write("location.reload();");
 		out.write("</script>");
 		out.close();
 		

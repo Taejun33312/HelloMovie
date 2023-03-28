@@ -130,7 +130,31 @@ public class ReviewDAO {
 	}
 	// deleteReview(int Mem_num, String M_num)
 	
-
+	// checkMovieSee(int Mem_num, String M_num)
+	public int checkMovieSee(int Mem_num, String M_num) {
+		int result = -1;
+		try {
+			con = getCon();
+			sql = "select * from booking where Mem_num=? and M_num=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, Mem_num);
+			pstmt.setString(2, M_num);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = 1;
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return result;
+	}
+	// checkMovieSee(int Mem_num, String M_num)
 	
 	
 	
