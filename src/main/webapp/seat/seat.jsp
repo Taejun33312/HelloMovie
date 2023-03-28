@@ -161,9 +161,6 @@
 	}
 </style>
 
-
-
-
 </head>
 <body class="post-template page-template page">
 <div class="site-wrapper">
@@ -175,8 +172,6 @@
 			<h2 style="color:white;">인원/좌석</h2>
 			<h4 style="color:white;">${Scdto.sc_zone } ${Scdto.sc_name } / ${tdto.t_date } / ${tdto.t_startTime } ~ ${tdto.t_endTime }</h4>
 		</div>
-		
-		
 			
 		<form action="./seatBook.st" method="post" id="form">
 		<input type="hidden" value="${T_num }" name="T_num">
@@ -220,9 +215,6 @@
 			<input type="submit" class="payButton" value="예매하기">
 		
 		</form>	
-		
-		
-		
 		
 	</div>
 	</header>

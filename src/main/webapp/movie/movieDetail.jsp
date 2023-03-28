@@ -14,6 +14,7 @@
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
@@ -95,9 +96,13 @@
 				}
 			});
 
-			
-			
 		});
+		
+		window.onpageshow = function(event) {
+		    if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+		    	window.location.reload();
+		    }
+		}
 
 
 </script>
@@ -106,7 +111,6 @@
 		color:white;
 	}
 </style>
-
 
 </head>
 <body class="author-template">
@@ -165,7 +169,7 @@
 			</tr>
 			<c:forEach var="reviewList" items="${reviewList }">
 				<tr>
-					<td>${reviewList.mem_id }</td>
+					<td>${fn:replace(reviewList.mem_id,fn:substring(reviewList.mem_id,2,5),'***') }</td>
 					<td>${reviewList.review }</td>
 					<td>${reviewList.m_grade }</td>
 					<td>${reviewList.review_date }</td>
@@ -179,8 +183,6 @@
 		</table>
 		</div>
 		
-		
-	
 	<jsp:include page="../inc/footer.jsp"/>
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

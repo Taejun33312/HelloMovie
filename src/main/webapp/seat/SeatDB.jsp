@@ -15,18 +15,13 @@
 		String M_num = request.getParameter("M_num");
 		String alert = "";
 		
-		System.out.println(S_num);
-		System.out.println(T_num);
-		System.out.println(Sc_num);
-		System.out.println("M"+M_num);
-		
 		int S_choice = 1;
 		try{
 			String driver = "com.mysql.cj.jdbc.Driver";
 			Class.forName(driver);
-			String url = "jdbc:mysql://db.itwillbs.dev:3306/class6_221128_team1";
-			String userName = "class6_221128_team1";
-			String userPass = "1234";
+			String url = "jdbc:mysql://itwillbs1.cafe24.com/itwillbs1";
+			String userName = "itwillbs1";
+			String userPass = "itwillbs8030909";
 			Connection con = DriverManager.getConnection(url, userName, userPass);
 			PreparedStatement pstmt = null;
 			
@@ -45,7 +40,6 @@
 			
 			if(rs.next()){
 				S_choice = rs.getInt("S_choice");
-				System.out.println(S_choice);
 				
 				if(S_choice == 0){
 					sql = "update seat set S_choice=2 where S_num=? and T_num=? and Sc_num=?";
@@ -66,18 +60,11 @@
 					Object obj = parser.parse(alert);
 					JSONObject data = (JSONObject)obj;
 					
-					//JSONObject data = (JSONObject)parser.parse(alert);
-					
 					System.out.print(data.get("alt"));
-					
 					response.getWriter().print(data);
-					//out.print(alert);
-					
 				}
 				
 			}
-			
-			
 			con.close();
 			pstmt.close();
 		} catch (Exception e){
