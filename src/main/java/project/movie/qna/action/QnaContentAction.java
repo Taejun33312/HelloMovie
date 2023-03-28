@@ -14,12 +14,12 @@ public class QnaContentAction implements Action{
 		System.out.println(" M : QnaContentAction_execute() ");
 		
 		// 전달정보 저장
-		int Mem_num = Integer.parseInt(request.getParameter("Mem_num"));
+		int Q_num = Integer.parseInt(request.getParameter("Q_num"));
 		String pageNum = request.getParameter("pageNum");
 		
 		QnaDAO dao = new QnaDAO();
 		
-		QnaDTO dto = dao.getQna(Mem_num);
+		QnaDTO dto = dao.getQna(Q_num);
 		
 		String tmp = dto.getMem_content().replace("\r\n", "<br>");
 		

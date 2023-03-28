@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import project.movie.qna.db.QnaDAO;
 import project.movie.qna.db.QnaDTO;
@@ -15,7 +16,15 @@ public class QnaListAction implements Action {
 								 HttpServletResponse response) throws Exception {
 		
 	 System.out.println(" M : QnaListAction_execute() 호출 ");
+	 
+	 HttpSession session = request.getSession();
+	 String id = (String) session.getAttribute("id");
+	 if( id == null) {
+		 response.sendRedirect("./Login.me");
 		 
+		 return null;
+	 }
+	 
 	  QnaDAO dao = new QnaDAO();
 			// 게시판 전체글 개수
 		int cnt = dao.getQnaCount();
@@ -64,10 +73,11 @@ public class QnaListAction implements Action {
 				
 				
 		///////////////////////////////////////////////////////////
-
+//				System.out.println(qnaList);
+				System.out.println("id : "+id);
 //		      전달할 정보를 request 영역에 저장(글정보 + 페이징처리정보)
 		      request.setAttribute("qnaList", qnaList);
-	
+		      session.setAttribute("mem_id", id);
 		      request.setAttribute("pageNum", pageNum);
 		      request.setAttribute("cnt", cnt);
 		      request.setAttribute("pageCount", pageCount);
