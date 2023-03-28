@@ -196,16 +196,45 @@ public class MovieDAO {
 	
 	// 상품삭제
 	
+	// 멤버 카운트
+	public int getMemberCount() {
+		int cnt = 0;
+		try {
+			// 1.드라이버로드
+			// 2.디비연결
+			con = getCon();
+			// 3. sql 작성 & pstmt 객체
+			sql = "select count(*) from member";
+			pstmt = con.prepareStatement(sql);
+			// 4. sql 실행
+			rs = pstmt.executeQuery();
+			// 5. 데이터처리
+			if (rs.next()) {
+				cnt = rs.getInt(1);
+			}
+			System.out.println(" DAO : 글 전체 개수 :" + cnt);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+
+		return cnt;
+	}
+	
 	// 회원정보 조회
 	
-			public List<MemberDTO> getMemberList(){
+			public List<MemberDTO> getMemberList(int startRow, int pageSize){
 				List<MemberDTO> memList = new ArrayList<MemberDTO>();
 				 
 				
 				try {
 					con = getCon();
-					sql = "select * from member ";
+					sql = "select * from member order by Mem_num limit ?,?";
 					pstmt = con.prepareStatement(sql);
+					
+					pstmt.setInt(1, startRow-1);
+					pstmt.setInt(2, pageSize);
 					
 					rs = pstmt.executeQuery();
 					

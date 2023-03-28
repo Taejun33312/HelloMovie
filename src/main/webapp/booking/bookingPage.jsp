@@ -164,6 +164,35 @@
 			});
 		} ///choiceMovie
 		
+		 $('form').on('submit', function(event){
+
+		    // 폼 유효성 검사
+		    if(M_num == null){
+		        alert('영화를 선택해 주세요.');
+		        
+		        return false;
+		    } else if(Sc_num == null){
+		        alert('극장을 선택해 주세요.');
+		        
+		        return false;
+		    } else if(T_date == null){
+		        alert('날짜를 선택해 주세요.');
+		        
+		        return false;
+		    } else if(T_num == null){
+		        alert('시간을 선택해 주세요.');
+		        
+		        return false;
+		    } else {
+		        // 폼 제출
+		        $('moveSeatButton').on('click', function(){
+		        	$(this).submit();
+		        })
+		    }
+		});  
+
+		
+		
 	});
 	function getGrade(movieCd,tag){
 		

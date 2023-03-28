@@ -31,7 +31,7 @@
 	</header>
 	</body>
 	<main class="content" role="main">
-	<form action="./AdminPage.mm" method="post">	
+		
 	<input type ="hidden" name="Mem_num" value="${dto.mem_num }">
 
 	<table>
@@ -74,13 +74,33 @@
 	    </c:forEach>
 	    
 	</table>
+	
 		
 		
+	<div style="text-align: center; font-size: 20px;">
+	<c:if test="${startPage > pageBlock }">
+			<a href="./AdminMemberInfo.mm?pageNum=${startPage-pageBlock }">Prev</a>
+		</c:if>
+		
+		<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">
+			<a href="./AdminMemberInfo.mm?pageNum=${i }">${i }</a>
+		</c:forEach>
+		
+		<c:if test="${endPage < pageCount }">
+			<a href="./AdminMemberInfo.mm?pageNum=${startPage+pageBlock }">Next</a>
+		</c:if>
+		</div>
 
-			<input type="submit" value="돌아가기">
-		</form>
-		<jsp:include page="../inc/footer.jsp"/>
+			
 	</main>
-
+		
+		<!-- <form action="./AdminPage.mm" method="post">
+		
+			<input class="btn-gradient red mini" style="width: 150px; height: 50px;" type="submit" value="돌아가기">
+			
+		</form> -->
+		
+		<jsp:include page="../inc/footer.jsp"/>
+		
 		
 </html>
