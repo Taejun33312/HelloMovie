@@ -56,20 +56,20 @@
     </caption>	
         <tr>
             <th class="th" scope="row"><img alt="BRONZE" src="./img/bornze.jpg" width="250px" height="180px"></th>
-            <td><h3> Bronze</h3>
+            <td><h2 style="text-align: left;"> Bronze</h2>
             <h3>가입시 최초등급 </h3>
             </td>
         </tr>
         <tr>
             <th class="th" scope="row"><img alt="SILVER" src="./img/silver.jpg" width="250px" height="180px"></th>
-            <td><h3> 실버</h3>
-            <h5> 예매 횟수 10번 이상일시 10% 할인 </h5>
+            <td><h2 style="text-align: left;"> Silver</h2>
+            <h3> 예매 횟수 10번 이상일시 10% 할인 </h3>
             </td>
         </tr>
         <tr>
             <th class="th" scope="row"><img alt="GOLD" src="./img/gold.jpg" width="250px" height="180px"></th>
-            <td><h5> 골드</h5>
-            <h5> 예매 횟수 20번 이상일시 20% 할인 </h5>
+            <td><h2 style="text-align: left;"> Gold </h2>
+            <h3> 예매 횟수 20번 이상일시 20% 할인 </h3>
             </td>
         </tr>
   </table>

@@ -11,7 +11,7 @@
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="shortcut icon" href="#">
-<link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
+<link rel="stylesheet" type="text/css" href="assets/css/myPage.css"/>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 
 <style type="text/css">
@@ -33,17 +33,20 @@
 </head>
 
 <body class="post-template page-template page">
-<div class="site-wrapper">
-<jsp:include page="../inc/top.jsp"/>
+
+<div class="main-nav overlay clearfix">
+	<jsp:include page="../inc/top.jsp"/>
+</div>
+
 	<header class="main-header post-head " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/10/10174958/fas-compressor.jpg)">
 		<div class="vertical">
 			<div class="main-header-content inner">
+			
 				<h1 class="post-title">My page</h1>
 					<div class="author-meta">
 					<span class=""><a href="MemberUpdate.me">회원정보 수정</a></span>
 					<span><a href="">예매내역</a></span> 
 					<span class=""><a href="Bonus.me">등급확인</a></span>
-					<span class=""><a href="">결제내역</a></span>
 					<span class=""><a href="">1:1 문의내역</a></span>
 					<span class=""><a href="Delete.me">회원탈퇴</a> </span>
 					</div>
@@ -51,6 +54,7 @@
 		</div>
 	</header>
 	
+	<div class="site-wrapper">
 	<main class="content" role="main">
 	<article class="post tag-fashion tag-art page">
 	<section class="post-content">
@@ -59,11 +63,11 @@
 			<c:forEach var="s" items="${totalList}">
 			
 				<div class="membercard">
-					<!--  해당 회원의 총 예매내역 출력 -->
-					
+				<!--  해당 회원의 총 예매내역 출력 -->
 					<img class="logo" src="assets/img/logo2.png" width="120px" >
-					예매번호: ${s[0].b_booking_num} 
-					<h2> ${s[1].m_name } </h2>
+				
+					예매번호: ${s[0].b_booking_num} <br>
+					<h4> ${s[1].m_name } </h4>
 					${s[3].t_date } 
 					${s[3].t_startTime } 
 					${s[2].sc_name } <br>
@@ -72,6 +76,7 @@
 					성인 : ${s[0].adult_num}명 <br>
 					총금액 : ${s[0].total_price }원 <br>
 					결제수단 : ${s[0].b_payment }
+					
 				</div>
 
 			</c:forEach>
@@ -80,13 +85,7 @@
 	</article>
 	</main>
 	
-	<!-- <footer class="site-footer clearfix">
-	<a href="#top" id="back-to-top" class="back-top"></a>
-	<div class="text-center">
-		Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-
-	</div>
-	</footer> -->
+	<jsp:include page="../inc/footer.jsp" />
 	
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

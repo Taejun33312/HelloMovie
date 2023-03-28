@@ -10,7 +10,7 @@
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="shortcut icon" href="#">
-<link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
+<link rel="stylesheet" type="text/css" href="assets/css/myPage.css"/>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic|Playfair+Display:400,700,400italic,700italic"/>
 
 <style type="text/css">
@@ -83,7 +83,7 @@ display: inline;
 					<span class=""><a href="MemberUpdate.me">회원정보 수정</a></span>
 					<span><a href="MyTicketInfo.bk?Mem_num=${dto.mem_num }">예매내역</a></span> 
 					<span class=""><a href="Bonus.me">등급확인</a></span>
-					<span class=""><a href="">1:1 문의내역</a></span>
+					<span class=""><a href="QnaListAction.qa">1:1 문의내역</a></span>
 					<span class=""><a href="Delete.me">회원탈퇴</a> </span>
 				</div>
 		</div>

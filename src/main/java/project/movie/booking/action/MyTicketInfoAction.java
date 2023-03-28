@@ -23,7 +23,7 @@ public class MyTicketInfoAction implements Action {
 		ActionForward forward = new ActionForward();
 		
 		if(id == null) { // 로그인 안 됐을때
-			forward.setPath("./Login.mm");
+			forward.setPath("./Login.me");
 			forward.setRedirect(true);
 			return forward;
 		}

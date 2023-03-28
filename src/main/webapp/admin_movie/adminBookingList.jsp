@@ -84,9 +84,5 @@
 	</main>
 		<jsp:include page="../inc/footer.jsp"/>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/masonry.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
 </body>
 </html>

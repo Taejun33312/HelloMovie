@@ -461,7 +461,7 @@ iframe,.fluid-width-video-wrapper {
 	background:#fff;
 	-webkit-transition:-webkit-transform 0.5s ease;
 	transition:transform 0.5s ease;
-	margin-top:auto;
+	margin-top:64px;
 }
 .home-template .site-wrapper {
 }
@@ -476,7 +476,7 @@ body.nav-opened .site-wrapper {
 /* ========================================================================== 4. General - The main styles for the the theme ========================================================================== */
 .content {
 	width:85%;
-	height:1000px;
+	height:auto;
 	margin:0px auto;
 	background:white;
 	padding:40px 0px;
@@ -492,7 +492,7 @@ body.nav-opened .site-wrapper {
 	display:table;
 	width:100%;
 	height:100vh;
-	/* margin-bottom:5rem; */
+	margin-bottom:5rem;
 	text-align:center;
 	background:#222 no-repeat center center;
 	background-image:url(../img/default.jpg);
@@ -501,14 +501,14 @@ body.nav-opened .site-wrapper {
 }
 .main-header .inner {
 	width:80%;
-	margin-top:auto;
+	margin-top:-64px;
 }
 .main-header-content.inner h1,.main-header-content.inner .post-meta,.main-header-content.inner .post-meta a {
 	color:#fff;
 }
 .main-nav {
 	position:relative;
-	padding:5px 5%;
+	padding:2px 5%;
 	margin:0 0 0px 0;
 }
 .main-nav a {
@@ -1018,12 +1018,13 @@ body:not(.post-template) .post-title {
 /* Stop elements,such as img wider than the post content,from creating horizontal scroll - slight hack due to imperfections with browser width % calculations and rounding */
 .post-template .content {
 	width:80%;
-	max-width:900px;
+/* 	max-width:900px; */
 	margin:0px auto;
 	margin-top:-100px;
 	background:#fff;
 	position:relative;
 	padding:40px 50px;
+	padding-bottom:180px;
 	font-weight:300;
 	font-family:Roboto;
 	overflow:hidden;
@@ -1132,9 +1133,8 @@ h2.widget-title {
 	padding:0;
 	margin:0;
 	list-style:none;
-	font-size:1.4rem;
+	font-size:1.6rem;
 	line-height:1;
-	font-style:italic;
 	color:#9EABB3;
 }
 .author-meta a {
@@ -1179,7 +1179,7 @@ h2.widget-title {
 }
 /* ========================================================================== 6. Author profile ========================================================================== */
 .post-head.main-header {
-	/* height:65vh; */
+	height:65vh;
 	min-height:180px;
 }
 .no-cover.post-head.main-header {
@@ -1467,8 +1467,8 @@ h2.widget-title {
 }
 /* ========================================================================== 10. Footer - The bottom of every page ========================================================================== */
 .site-footer {
-	position:relative;
-	margin:0rem 0 0 0;
+/* 	position:relative; */
+	position:absolute;
 	padding:2rem 15px;
 	font-size:1.3rem;
 	text-transform:uppercase;
@@ -1477,10 +1477,9 @@ h2.widget-title {
 	background:#1d1d1d;
 	letter-spacing:1px;
 	font-family:Playfair Display;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	
+	bottom:0;
+	left:0;
+	width:100%;
 }
 .site-footer a {
 	text-decoration:none;
@@ -1490,9 +1489,6 @@ h2.widget-title {
 .site-footer a:hover {
 	color:#fff;
 }
-
-
-
 .poweredby {
 	display:block;
 	width:45%;
@@ -2432,7 +2428,7 @@ pre .val {color: #e6db74;} /* value */
   margin: 9px;
 }
 .btn-gradient {
-  margin-right: 5px;
+  margin: 5px;
 }
 a[class*="btn"] {text-decoration: none;}
 input[class*="btn"], 
@@ -2650,7 +2646,7 @@ button[class*="btn"] {border: 0;}
 .btn-gradient {
   text-decoration: none;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 30px;
   display: inline-block;
   position: relative;
   border: 1px solid rgba(0,0,0,0.21);
@@ -2724,7 +2720,6 @@ button[class*="btn"] {border: 0;}
   background: -ms-linear-gradient(top, rgba(130,200,160,1) 0%, rgba(130,199,158,1) 100%);
   background: linear-gradient(to bottom, rgba(130,200,160,1) 0%, rgba(124, 185, 149, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82c8a0', endColorstr='#82c79e', GradientType=0 );
-  margin-left: 73%;
 }
 
 .btn-gradient.red:active    {background: #E35252;}

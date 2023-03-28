@@ -177,17 +177,7 @@
 	</section>
 	</article>
 	</main>
-	<footer class="site-footer clearfix">
-	<a href="#top" id="back-to-top" class="back-top"></a>
-	<div class="text-center">
-		Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-
-	</div>
-	</footer>
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/masonry.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
 </body>
+<jsp:include page="../inc/footer.jsp"/>
 </html>

@@ -150,12 +150,15 @@ Kakao.init('7b8ba339d869370b95d680c83b575837'); //발급받은 키 중 javascrip
 	  }  
 	</script>
 <!-- 카카오 로그인 스크립트 끝 -->
- 
-	<jsp:include page="../inc/footer.jsp" />
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/masonry.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
 </body>
+<footer class="site-footer clearfix" style="position: absolute;">
+	<a href="#top" id="back-to-top" class="back-top"></a>
+	<div class="text-center">
+		 	<a>안영화세요</a><br>
+		 	<a href="./NoticeListAction.no"><span class="notice1">공지사항</span></a>
+			 <a href="./QnaListAction.qa"><span class="notice1">고객센터</span></a><br>
+			 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+			All rights reserved
+	</div>
+	</footer>
 </html>

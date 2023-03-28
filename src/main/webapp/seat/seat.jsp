@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>Nectaria - Free HTML Template by WowThemes.net</title>
+<title>Hello Movie</title>
 <meta name="description" content="Thoughts, reviews and ideas since 1999."/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" type="text/css" href="assets/css/screen.css"/>
@@ -166,10 +166,10 @@
 
 </head>
 <body class="post-template page-template page">
-<div class="site-wrapper">
+<div class="site-wrapper" style="margin-top: 53px">
 	<jsp:include page="../inc/top.jsp"/>
 	<header class="main-header post-head " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/10/10174958/fas-compressor.jpg)">
-	<div class="vertical">
+	<div class="vertical" style="height: auto;">
 		<div class="main-header-content inner">
 			<h2 class="post-title"  style="color:white;">${M_name}</h2>
 			<h2 style="color:white;">인원/좌석</h2>
@@ -227,17 +227,8 @@
 	</div>
 	</header>
 	
-	<footer class="site-footer clearfix">
-	<a href="#top" id="back-to-top" class="back-top"></a>
-	<div class="text-center">
-		Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-
-	</div>
-	</footer>
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/masonry.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
 </body>
+
+<jsp:include page="../inc/footer.jsp"/>
 </html>

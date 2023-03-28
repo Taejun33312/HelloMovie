@@ -133,7 +133,6 @@ h2{
   <hr>
   
   
-
   <li>
 
 	<ul id="ulTable">
@@ -145,9 +144,8 @@ h2{
 		<!--     <li>등록일</li> -->
 		  </ul> 
 		</li>
-		
-		
 		<c:forEach var="dto" items="${qnaList }">    
+		<c:if test="${dto.mem_id eq sessionScope.mem_id }">
 			<li>
 			  <ul>
 				<%-- <li>${dto.q_num }</li> --%>
@@ -156,36 +154,40 @@ h2{
 				</li>				
 			   
 			   <%--  <li>${dto.mem_id }</li> --%>
+			    <li style="padding-right: 10px" >${dto.mem_id }</li>
 			    <li>${dto.q_date }</li>
-			     <%
-			  String id = (String)session.getAttribute("id");
-
-		  	  if(id != null){
-  	%>
 	       <li><a href="./QnaUpdateAction.qa?Q_num=${dto.q_num }&pageNum=${pageNum}" style="text-decoration: none;" >수정</a>
 	          <a href="./QnaDeleteAction.qa?Q_num=${dto.q_num }&pageNum=${pageNum}" style="text-decoration: none;" >삭제</a></li>
-  	<%
-  	 		 	}
-  	%> 
 		
 			 </ul>
 			 </li> 
+ 		</c:if>
 	    </c:forEach>
- 
-  
-  	  <%
-			  String id = (String)session.getAttribute("id");
-
-		  	  if(id != null){
-		  	  if(id.equals("admin")){
-  	%>
+	    
+		<c:forEach var="dto" items="${qnaList }">    
+		<c:if test="${sessionScope.id eq 'admin' }">
+			<li>
+			  <ul>
+				<%-- <li>${dto.q_num }</li> --%>
+				<li class="left" style=" width: 650px">
+					<a href="./QnaContentAction.qa?Q_num=${dto.q_num }&pageNum=${pageNum}">${dto.mem_subject }</a>
+				</li>				
+			   
+			   <%--  <li>${dto.mem_id }</li> --%>
+			    <li style="padding-right: 10px" >${dto.mem_id }</li>
+			    <li>${dto.q_date }</li>
+	       <li><a href="./QnaUpdateAction.qa?Q_num=${dto.q_num }&pageNum=${pageNum}" style="text-decoration: none;" >수정</a>
+	          <a href="./QnaDeleteAction.qa?Q_num=${dto.q_num }&pageNum=${pageNum}" style="text-decoration: none;" >삭제</a></li>
+		
+			 </ul>
+			 </li> 
+ 		</c:if>
+	    </c:forEach>
+ 		
+ 		
 	  <div align="right" class="btngreen">
           <a href="./QnaWrite.qa" class="btn" value="글쓰기">글쓰기</a>
       </div>
-		<%
-  	 		 	}
-  			  }
-  	%> 
 		
 	<div id="page_control">
 	

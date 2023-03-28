@@ -20,16 +20,16 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 
+	<jsp:include page="../inc/top.jsp"/>
 </head>
 
 
 <body class="author-template">
-	<jsp:include page="../inc/top.jsp"/>
 	<a class="blog-logo" href="./Main.mv"><img src="assets/img/logo.png" alt="Fashion Critiques"/></a>
 	<header class="main-header author-head " style="background-image: url(http://s3.amazonaws.com/caymandemo/wp-content/uploads/sites/10/2015/09/30162427/sep2.jpg)">
 <jsp:include page="../inc/adminCenter.jsp"/>	
 	</header>
-	
+	</body>
 	<main class="content" role="main">
 	<form action="./AdminPage.mm" method="post">	
 	<input type ="hidden" name="Mem_num" value="${dto.mem_num }">
@@ -76,14 +76,11 @@
 	</table>
 		
 		
+
 			<input type="submit" value="돌아가기">
 		</form>
-	</main>
 		<jsp:include page="../inc/footer.jsp"/>
+	</main>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="assets/js/masonry.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
-</body>
+		
 </html>
