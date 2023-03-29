@@ -2279,17 +2279,6 @@ div#preloader {
 	line-height : 150px;
 }
 
-.content1 {
-	width:85%;
-	margin:0px auto;
-	background:#874242;
-	padding:40px 0px;
-	margin-top:-100px;
-	position:relative;
-	border-left:1px solid rgba(0,0,0,0.08);
-	border-right:1px solid rgba(0,0,0,0.08);
-	border-top: 1px solid rgba(0,0,0,0.08);
-}
 
 .grid1 {
 	width:50%;
@@ -2790,7 +2779,7 @@ span.socialheader {
 }
 .content1 {
 	width:85%;
-	height:110%;
+	height:120%;
 	margin:0px auto;
 	background:#874242;
 	padding:40px 0px;
@@ -2825,15 +2814,17 @@ span.socialheader {
 }
 .detailDiv1 {
 	width:50%;
-	height:50%;
+	height:100%;
 	float:left;
 	text-align: center;
+	margin-top: 100px;
 }
 .detailDiv2 {
 	width:50%;
-	height:50%;
+	height:100%;
 	color:black;
 	float:left;
+	margin-top: 100px;
 }
 .detailDiv3 {
 	width:100%;

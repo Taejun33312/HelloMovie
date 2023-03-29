@@ -40,7 +40,6 @@
 	
 		<h2 style="color:white; margin-top:100px"><%=yesterday %> 기준</h2>
 		<h2 style="color:white;">일간 박스오피스</h2>
-		
 	</div>
 	
 	</header>
