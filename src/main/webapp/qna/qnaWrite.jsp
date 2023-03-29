@@ -75,7 +75,7 @@ padding: 10px !important;
 	<main id="content" class="content" role="main">
 	<!-- Form -->
 	
-	<form action="./QnaWriteAction.qa" method="post" enctype="multipart/form-data" >
+	<form action="./QnaWriteAction.qa" method="post">
 <input type="hidden" name="Mem_id" >
 <table class="question">
     <caption class="qtit"><h2>1:1문의사항</h2></caption>
@@ -101,12 +101,12 @@ padding: 10px !important;
             </td>
         </tr>
         <hr>
-        <tr>
+       <!--  <tr>
             <th class="th" scope="row">첨부파일</th>
             <td>
 			 <input type="file" title="첨부파일" class="wid10"  name="Q_img" />
             </td>
-        </tr>
+        </tr> -->
   </table>
       
          <p align="right"><input type="submit" class="btngreen" value="등록하기"></p>
