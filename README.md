@@ -37,5 +37,5 @@ https://www.canva.com/design/DAFf2COXJ4Y/vu6I3NxLMYNhK8xXByh7Cg/edit?utm_content
  # 프로젝트 기능 명세서
  https://docs.google.com/spreadsheets/d/1jkehWBea2wNlP5PnmjaSZoVt0Hzykj2Nf2eRX28868A/edit?usp=sharing
  
- # 우리의 협업 과정
+ # 프로젝트 DB 설계
  https://www.notion.so/698bae102bdc451ea00b645461ae865b?v=1440eac4560f4c18a5c1a1b5c3d7ec03&pvs=4
