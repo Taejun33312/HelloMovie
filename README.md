@@ -25,17 +25,15 @@
  - 협업 도구 : GitHub, Slack, Notion
 
  # 역할 분담
- - 박태준 : 프로젝트 전체 관리, 일정 관리, 극장, 예매 기능 구현, 문서 작성&공유
  - 김민화 : 카카오&네이버 로그인, 마이 페이지, 예매 내역
  - 김태희 : 회원가입, 회원 수정, 마이 페이지
+ - 박철민 : 영화 목록, 상세 페이지(리뷰), 상영 등록, 좌석,제결제
+ - 박태준 : 프로젝트 전체 관리, 일정 관리, 극장, 예매 기능 구현, 문서 작성&공유
  - 송서준 : 공지사항, 문의사항, 관리자 페이지
  - 전상록 : 메인 페이지, 관리자 페이지
 
- # 프로젝트 PPT
-https://www.canva.com/design/DAFf2COXJ4Y/vu6I3NxLMYNhK8xXByh7Cg/edit?utm_content=DAFf2COXJ4Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+ # [프로젝트 PPT](https://www.canva.com/design/DAFf2COXJ4Y/vu6I3NxLMYNhK8xXByh7Cg/edit?utm_content=DAFf2COXJ4Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton "PPT")
 
- # 프로젝트 기능 명세서
- https://docs.google.com/spreadsheets/d/1jkehWBea2wNlP5PnmjaSZoVt0Hzykj2Nf2eRX28868A/edit?usp=sharing
+ # [프로젝트 기능 명세서](https://docs.google.com/spreadsheets/d/1jkehWBea2wNlP5PnmjaSZoVt0Hzykj2Nf2eRX28868A/edit?usp=sharing "기능")
  
- # 프로젝트 DB 설계
- https://www.notion.so/698bae102bdc451ea00b645461ae865b?v=1440eac4560f4c18a5c1a1b5c3d7ec03&pvs=4
+ # [프로젝트 DB 설계](https://www.notion.so/698bae102bdc451ea00b645461ae865b?v=1440eac4560f4c18a5c1a1b5c3d7ec03&pvs=4 "DB 설계")
