@@ -20,7 +20,7 @@ public class MovieListAction implements Action {
 		MovieDAO dao = new MovieDAO();
 		MovieDTO dto = new MovieDTO();
 		NaverAPIDTO Ndto = new NaverAPIDTO();
-		NaverAPI api = new NaverAPI();
+		NaverAPI3 api = new NaverAPI3();
 		
 		List dailyList = dao.getmovieAPI();
 		List imgList = new ArrayList<>();

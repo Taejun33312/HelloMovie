@@ -7,7 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import movie.movie.action.NaverAPI;
+import movie.movie.action.NaverAPI3;
 import movie.movie.db.NaverAPIDTO;
 
 public class MovieDetailAction implements Action {
@@ -19,7 +19,7 @@ public class MovieDetailAction implements Action {
 		String movieNm = request.getParameter("movieNm");
 		String movieCd = request.getParameter("movieCd");
 		
-		NaverAPI api = new NaverAPI();
+		NaverAPI3 api = new NaverAPI3();
 		NaverAPIDTO dto = api.getNaverAPI(movieNm);
 //		ReviewDAO dao = new ReviewDAO();
 //		List reviewList = dao.getMovieReview(movieCd);
