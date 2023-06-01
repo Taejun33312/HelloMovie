@@ -24,7 +24,7 @@ public class MovieDetailAction implements Action {
 		String movieNm = request.getParameter("movieNm");
 		String movieCd = request.getParameter("movieCd");
 		
-		NaverAPI api = new NaverAPI();
+		NaverAPI3 api = new NaverAPI3();
 		NaverAPIDTO dto = api.getNaverAPI(movieNm);
 		ReviewDAO dao = new ReviewDAO();
 		List reviewList = dao.getMovieReview(movieCd);

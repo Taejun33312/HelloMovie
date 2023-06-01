@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import movie.main.db.MovieDAO;
 import movie.main.db.MovieDTO;
-import movie.movie.action.NaverAPI;
+import movie.movie.action.NaverAPI3;
 import movie.movie.db.NaverAPIDTO;
 import movie.review.db.ReviewDAO;
 public class MovieMainAction implements Action {
@@ -19,7 +19,7 @@ public class MovieMainAction implements Action {
 		movie.movie.db.MovieDAO dao = new movie.movie.db.MovieDAO();
 		movie.movie.db.MovieDTO dto = new movie.movie.db.MovieDTO();
 		NaverAPIDTO Ndto = new NaverAPIDTO();
-		NaverAPI api = new NaverAPI();
+		NaverAPI3 api = new NaverAPI3();
 		
 		List dailyList = dao.getmovieAPI();
 		List imgList = new ArrayList<>();
