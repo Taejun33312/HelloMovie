@@ -31,6 +31,7 @@
  - 박태준 : 프로젝트 전체 관리, 일정 관리, 극장, 예매 기능 구현, 문서 작성&공유
  - 송서준 : 공지사항, 문의사항, 관리자 페이지
  - 전상록 : 메인 페이지, 관리자 페이지
+ # [HelloMovie](http://itwillbs22.cafe24.com/HelloMovie/)
 
  # [프로젝트 PPT](https://www.canva.com/design/DAFf2COXJ4Y/vu6I3NxLMYNhK8xXByh7Cg/edit?utm_content=DAFf2COXJ4Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton "PPT")
 
